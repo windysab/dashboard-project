@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US">
+<head>
+    <title>PTSP Online</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Pelayanan Terpadu Satu Pintu Secara Online">
+    <meta name="keywords" content="ptsp">
+    <meta name="author" content="Tim IT PA Jakarta Timur">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/utilities.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="stylesheet" href="assets/css/fontawesome/all.min.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/themify-icons.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/vegas.min.css">
+    <link rel="stylesheet" href="assets/css/fonts.css">
+    <link href="assets/images/favicon.ico" rel="icon"> 
+    <style>
+        #home, #lokasi {
+            display: none;
+        }
+        .feature-block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .feature-block:hover {
+            transform: translateY(-10px);
+        }
+        .feature-block img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        .feature-block h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .feature-block p {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+        .feature-block button {
+            font-size: 16px;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body class="slideshow-background">
+    <!-- Global overlay -->
+    <div class="global-overlay">
+        <div class="overlay-inner bg-image-holder bg-cover">
+            <img src="assets/images/background.jpg" alt="">
+        </div>
+        <div class="overlay-inner bg-dark opacity-50"></div>
+    </div>
+
+    <!-- Site header -->
+    <header class="site-header header-light header-mobile-light">
+        <div class="header-brand">
+            <!-- Logo -->
+            <a class="logo" href="#">
+                <img src="assets/images/logo.png" alt="">
+            </a>
+            <button type="button" id="navigation-toggle" class="nav-toggle">
+                <span></span>
+            </button>
+        </div>
+        <div class="header-collapse">
+            <div class="header-collapse-inner">
+                <nav class="site-nav">
+                    <ul id="navigation">
+                        <li>
+                            <a href="#home"><i class="fas fa fa-home mr-2"></i> Home</a>
+                        </li>
+                        <li>
+                            <a href="#lokasi"><i class="fas fa-search-location mr-2"></i> Lokasi</a>
+                        </li>
+                    </ul>
+                </nav>
+                <a href="https://pa-jakartabarat.go.id" class="btn btn-primary" target="_blank" title="Halaman Website PTA Jakarta"><i class="fas fa fa-home mr-2"></i>Pengadilan Agama Jakarta Barat</a>
+            </div>
+        </div>
+    </header>
+
+    <main id="content">
+        <div class="site-content">
+            <div class="site-content-inner">
+
+                <div class="site-part" id="home">
+                    <section class="min-vh-100 d-flex">
+                        <div class="container align-self-center text-white">
+                            <div class="row">
+                                <div class="col-lg-10 mx-lg-auto text-center">
+                                    <h3 class="text-white mb-0 animated" data-animation="fadeInUp" style="font-size: 40px; line-height: 45px;"><strong>Selamat Datang Di</strong></h3>
+                                    <h1 class="text-white mb-0 animated" data-animation="fadeInUp" style="font-size: 50px; line-height: 55px;"><strong>PELAYANAN TERPADU <br/>SATU PINTU (PTSP) ONLINE</strong></h1>
+                                    <h3 class="text-white mb-0 animated" data-animation="fadeInUp"><strong>PENGADILAN AGAMA AMUNTAI KELAS</strong></h3>
+
+                                    <p class="lead text-white mb-3 animated" data-animation="fadeInUp" data-animation-delay="200">Layanan Informasi Secara Online</p>
+
+                                    <h5 class="text-white mt-3 mb-0 text-center" style="font-size: 15px; line-height: 15px;"><i class="far fa-user-circle mr-1"></i> Pengunjung [ Hari ini : <b>15</b> | Bulan ini : <b>214</b> | Total : <b>14158</b>]</h5>
+                                </div>
+                            </div>
+                            <div class="mt-3 mb-3 text-center">
+                                <span class="mr-2">
+                                    <a href="https://www.facebook.com/pengadilanagama.jakbar" target="_blank" class="btn btn-lg btn-primary btn-icon rounded-circle mb-2 mr-2">
+                                        <i class="fab fa-facebook-f mt-3"></i>
+                                    </a>
+                                </span>
+                                <span class="mr-2">
+                                    <a href="https://www.youtube.com/c/PengadilanAgamaJakartaBarat" target="_blank" class="btn btn-lg btn-danger btn-icon rounded-circle mb-2 mr-2">
+                                        <i class="fab fa-youtube mt-3"></i>
+                                    </a>
+                                </span>
+                                <span class="mr-2">
+                                    <a href="https://www.instagram.com/pa_jakartabarat/" target="_blank" class="btn btn-lg btn-secondary btn-icon rounded-circle mb-2 mr-2">
+                                        <i class="fab fa-instagram mt-3"></i>
+                                    </a>
+                                </span>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-12 col-lg-4 mb-3 text-center">
+                                    <img class="shadow img-fluid img-rounded mb-0 animated" data-animation="fadeInUp" data-animation-delay="600" src="assets/images/layanan_telepon.jpg" alt="Layanan Telepon">
+                                    <div class="feature-block p-3 bg-white text-black animated" data-animation="fadeInUp" data-animation-delay="600">
+                                        <h2 class="mb-0"><strong>Voice Call</strong></h2>
+                                        <p class="h5 mb-2">Layanan Informasi Melalui Telepon.</p>
+                                        <button type="button" layanan="telepon" class="view btn btn-block btn-primary btn-pill mb-0 mr-0">
+                                            <i class="fab fas fa-phone-volume mr-1"></i> (021) 1)58352092
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-lg-4 mb-3 text-center">
+                                    <img class="shadow img-fluid img-rounded mb-0 animated" data-animation="fadeInUp" data-animation-delay="600" src="assets/images/layanan_zoom.jpg" alt="Layanan Zoom">
+                                    <div class="feature-block p-3 bg-white text-black animated" data-animation="fadeInUp" data-animation-delay="600">
+                                        <h2 class="mb-0"><strong>Video Call</strong></h2>
+                                        <p class="h5 mb-2">Layanan Informasi Melalui ZOOM.</p>
+                                        <button type="button" layanan="zoom" class="view btn btn-block btn-primary btn-pill mb-0 mr-0">
+                                            <i class="fab fas fa-video mr-1"></i> Buka Aplikasi Zoom
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-lg-4 mb-3 text-center">
+                                    <img class="shadow img-fluid img-rounded mb-0 animated" data-animation="fadeInUp" data-animation-delay="600" src="assets/images/layanan_chat.jpg" alt="Layanan Chat">
+                                    <div class="feature-block p-3 bg-white text-black animated" data-animation="fadeInUp" data-animation-delay="600">
+                                        <h2 class="mb-0"><strong>Online Chat</strong></h2>
+                                        <p class="h5 mb-2">Layanan Informasi Melalui Chat.</p>
+                                        <button type="button" class="btn btn-block btn-primary btn-pill mb-0 mr-0">
+                                            <i class="fab fab fa-facebook-messenger mr-1"></i> Klik Mulai Percakapan/Kirim Pesan
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </section>
+                </div>
+
+                <div class="site-part" id="lokasi">
+                    <section class="min-vh-100 d-flex">
+                        <div class="container align-self-center text-white">
+                            <div class="row mb-3 text-center">
+                                <div class="col-12 col-lg-9 mx-lg-auto">
+                                    <h4 class="mb-0 animated" data-animation="fadeInUp"><strong>LOKASI PENGADILAN AGAMA AMUNTAI KELAS IB</strong></h4>
+                                    <div class="divider mx-auto bg-white animated mt-1 mb-1" data-animation="fadeInUp" data-animation-delay="200"><span></span></div>
+                                </div>
+                            </div>
+                            <iframe src="https://www.google.com/maps/place/Pengadilan+Agama+Jakarta+Barat/@-6.1850224,106.7530042,17z/data=!3m1!4b1!4m5!3m4!1s0x2e69f0c266357451:0xe435ae262abb7bea!8m2!3d-6.1850277!4d106.7551929" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" class="animated mt-0"></iframe>
+                        </div>
+                    </section>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <div id="modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <form id="modTel">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title mt-0" id="myModalLabel">Isi Biodata</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    </div>
+                    <div class="modal-body">
+                        <h6 class="modal-title mt-0" id="myModalLabel">Silahkan lengkapi data berikut sebelum menggunakan layanan ini.!</h6>
+                        <hr style="margin: 10px 0px;">
+
+                        <div class="form-group mb-2">
+                            <label>Nama Lengkap</label>
+                            <input type="hidden" id="satker" name="satker" value="8" readonly="">
+                            <input type="hidden" id="layanan" name="layanan" readonly="">
+                            <input type="text" id="nama" name="nama" class="form-control floating-label" placeholder="Nama Lengkap" required="">
+                        </div>
+
+                        <div class="form-group mb-0">
+                            <label>Nomor Handphone</label>
+                            <input type="text" id="nope" name="nope" class="form-control floating-label" placeholder="Nomor Handphone" required="">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary w-md waves-effect waves-light" type="submit">Simpan</button>
+                        <button type="button" class="btn btn-danger waves-effect" data-dismiss="modal">Batal</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </form>
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <!-- JAVASCRIPT -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/jquery.easing.min.js"></script>
+    <script src="assets/js/jquery.validate.min.js"></script>
+    <script src="assets/js/jquery.form.min.js"></script>
+    <script src="assets/js/jquery.countdown.min.js"></script>
+    <script src="assets/js/granim.min.js"></script>
+    <script src="assets/js/vegas.min.js"></script>
+    <script src="assets/js/jquery.mb.YTPlayer.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/modernizr-custom.js"></script> 
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            // Tampilkan bagian "home" secara default
+            $('#home').show();
+
+            // Tangani klik pada tautan navigasi
+            $('a[href^="#"]').on('click', function(event) {
+                event.preventDefault();
+                var target = $(this.getAttribute('href'));
+
+                if(target.length) {
+                    // Sembunyikan semua bagian
+                    $('.site-part').hide();
+
+                    // Tampilkan bagian yang sesuai
+                    target.show();
+
+                    // Smooth scrolling ke bagian yang dituju
+                    $('html, body').stop().animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                }
+            });
+
+            $('.view').click(function(){
+                var layanan = $(this).attr("layanan");
+                $('#layanan').val(layanan);
+                $('#modal').modal("show");
+            });
+        });
+
+        $('#modTel').on('submit', function (event) {
+            event.preventDefault();
+            var nama = $('#nama').val();
+            var nope = $('#nope').val();
+            var layanan = $('#layanan').val();
+            var satker = $('#satker').val();
+            $.ajax({
+                url: 'https://ptsp.pta-jakarta.go.id/dashboard/savePengguna',
+                type: 'POST',
+                dataType: 'json',
+                data: { nama: nama,
+                        nope: nope,
+                        layanan: layanan,
+                        satker: satker
+                },
+            })
+            .done(function(data) {
+                if (data > 0) {
+                    $('#modal').modal("hide");
+
+                    if (layanan == 'telepon') {
+                        window.location = "tel:(021)58352092"
+                    } else if (layanan == 'zoom') {
+                        window.location = "https://us06web.zoom.us/j/9681050045?pwd=vd3IpbiZt54B6GPIsGEMzSmvot8fuN.1"
+                    }
+                }
+            })
+            .fail(function() {
+                console.log("error");
+            })
+            .always(function() {
+                console.log("complete");
+            });
+        });
+    </script>
+    <script type='text/javascript'>
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+            s1.async=true;
+            s1.src="https://embed.tawk.to/5db92865e4c2fa4b6bd9177c/default";
+            s1.charset="UTF-8";
+            s1.setAttribute("crossorigin","*");
+            s0.parentNode.insertBefore(s1,s0);
+        })();            
+    </script>
+</body>
+</html>
