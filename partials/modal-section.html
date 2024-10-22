@@ -1,0 +1,32 @@
+<div id="modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <form id="modTel">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title mt-0" id="myModalLabel">Isi Biodata</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    <h6 class="modal-title mt-0" id="myModalLabel">Silahkan lengkapi data berikut sebelum menggunakan layanan ini.!</h6>
+                    <hr style="margin: 10px 0px;">
+
+                    <div class="form-group mb-2">
+                        <label>Nama Lengkap</label>
+                        <input type="hidden" id="satker" name="satker" value="8" readonly="">
+                        <input type="hidden" id="layanan" name="layanan" readonly="">
+                        <input type="text" id="nama" name="nama" class="form-control floating-label" placeholder="Nama Lengkap" required="">
+                    </div>
+
+                    <div class="form-group mb-0">
+                        <label>Nomor Handphone</label>
+                        <input type="text" id="nope" name="nope" class="form-control floating-label" placeholder="Nomor Handphone" required="">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary w-md waves-effect waves-light" type="submit">Simpan</button>
+                    <button type="button" class="btn btn-danger waves-effect" data-dismiss="modal">Batal</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </form>
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

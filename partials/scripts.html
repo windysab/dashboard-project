@@ -1,0 +1,90 @@
+<!-- JAVASCRIPT -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/jquery.easing.min.js"></script>
+<script src="assets/js/jquery.validate.min.js"></script>
+<script src="assets/js/jquery.form.min.js"></script>
+<script src="assets/js/jquery.countdown.min.js"></script>
+<script src="assets/js/granim.min.js"></script>
+<script src="assets/js/vegas.min.js"></script>
+<script src="assets/js/jquery.mb.YTPlayer.min.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/modernizr-custom.js"></script> 
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        // Tampilkan bagian "home" secara default
+        $('#home').show();
+
+        // Tangani klik pada tautan navigasi
+        $('a[href^="#"]').on('click', function(event) {
+            event.preventDefault();
+            var target = $(this.getAttribute('href'));
+
+            if(target.length) {
+                // Sembunyikan semua bagian
+                $('.site-part').hide();
+
+                // Tampilkan bagian yang sesuai
+                target.show();
+
+                // Smooth scrolling ke bagian yang dituju
+                $('html, body').stop().animate({
+                    scrollTop: target.offset().top
+                }, 1000);
+            }
+        });
+
+        $('.view').click(function(){
+            var layanan = $(this).attr("layanan");
+            $('#layanan').val(layanan);
+            $('#modal').modal("show");
+        });
+    });
+
+    $('#modTel').on('submit', function (event) {
+        event.preventDefault();
+        var nama = $('#nama').val();
+        var nope = $('#nope').val();
+        var layanan = $('#layanan').val();
+        var satker = $('#satker').val();
+        $.ajax({
+            url: 'https://ptsp.pta-jakarta.go.id/dashboard/savePengguna',
+            type: 'POST',
+            dataType: 'json',
+            data: { nama: nama,
+                    nope: nope,
+                    layanan: layanan,
+                    satker: satker
+            },
+        })
+        .done(function(data) {
+            if (data > 0) {
+                $('#modal').modal("hide");
+
+                if (layanan == 'telepon') {
+                    window.location = "tel:(021)58352092"
+                } else if (layanan == 'zoom') {
+                    window.location = "https://us06web.zoom.us/j/9681050045?pwd=vd3IpbiZt54B6GPIsGEMzSmvot8fuN.1"
+                }
+            }
+        })
+        .fail(function() {
+            console.log("error");
+        })
+        .always(function() {
+            console.log("complete");
+        });
+    });
+</script>
+<script type='text/javascript'>
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src="https://embed.tawk.to/5db92865e4c2fa4b6bd9177c/default";
+        s1.charset="UTF-8";
+        s1.setAttribute("crossorigin","*");
+        s0.parentNode.insertBefore(s1,s0);
+    })();            
+</script>
