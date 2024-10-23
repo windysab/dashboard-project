@@ -19,7 +19,8 @@
     <link rel="stylesheet" href="assets/css/fonts.css">
     <link href="assets/images/favicon.ico" rel="icon">
     <style>
-        .site-part {
+        #home,
+        #lokasi {
             display: none;
         }
 
@@ -222,7 +223,6 @@
                         </div>
                     </section>
                 </div>
-
                 <div class="site-part" id="contact">
                     <section class="min-vh-100 d-flex">
                         <div class="container align-self-center text-white">
@@ -244,6 +244,9 @@
 
                                         <h2 class="mb-0"><strong>LAYANAN INFORMASI</strong></h2>
                                         <p class="h5 mb-2">Viky Nur Yunanda, S.H.</p>
+                                        <!--<a href="tel:06414811133" type="button" class="btn btn-block btn-primary btn-pill mb-0 mr-0">
+                                            <i class="fab fas fa-phone-volume  mr-1"></i> Mulai Panggilan
+                                        </a>-->
                                     </div>
                                 </div>
 
@@ -255,6 +258,9 @@
 
                                         <h2 class="mb-0"><strong>LAYANAN PENDAFTARAN </strong></h2>
                                         <p class="h5 mb-2">Miftakul Afifah, A.Md.A.B.</p>
+                                        <!--<a href="https://us05web.zoom.us/j/2731675797?pwd=aGlncUNialhBUk1CKzg3OVQzUzJGUT09#success" target="_blank" type="button" class="btn btn-block btn-primary btn-pill mb-0 mr-0">
+                                            <i class="fab fas fa-video mr-1"></i> Buka Aplikasi Zoom
+                                        </a>-->
                                     </div>
                                 </div>
 
@@ -266,21 +272,28 @@
 
                                         <h2 class="mb-0"><strong>LAYANAN PEMBAYARAN</strong></h2>
                                         <p class="h5 mb-2">Nurul Hikmah, S.P.</p>
+                                        <!--<a href="https://api.whatsapp.com/send?phone=085215053471&text=Saya%20ingin%20bertanya%20sesuatu" target="_blank" type="button" class="btn btn-block btn-primary btn-pill mb-0 mr-0">
+                                            <i class="fab fas fa-video mr-1"></i> Klik Untuk Mulai Percakapan
+                                        </a>-->
                                     </div>
                                 </div>
 
                                 <div class="col-12 col-lg-3 mb-3 text-center">
                                     <img class="shadow img-fluid img-rounded mb-0 animated" data-animation="fadeInUp"
-                                        data-animation-delay="600" src="assets/images/nurul1.jpg" alt="">
+                                        data-animation-delay="600" src="assets/images/pirda1.jpg" alt="">
                                     <div class="feature-block p-3 bg-success text-black animated"
                                         data-animation="fadeInUp" data-animation-delay="600">
 
-                                        <h2 class="mb-0"><strong>LAYANAN PEMBAYARAN</strong></h2>
-                                        <p class="h5 mb-2">Nurul Hikmah, S.P.</p>
+                                        <h2 class="mb-0"><strong>LAYANAN PRODUK</strong></h2>
+                                        <p class="h5 mb-2">Pirda Rahimi, S.H.</p>
+                                        <!--<a href="https://api.whatsapp.com/send?phone=085215053471&text=Saya%20ingin%20bertanya%20sesuatu" target="_blank" type="button" class="btn btn-block btn-primary btn-pill mb-0 mr-0">
+                                            <i class="fab fas fa-video mr-1"></i> Klik Untuk Mulai Percakapan
+                                        </a>-->
                                     </div>
                                 </div>
 
                             </div>
+
                         </div>
                     </section>
                 </div>
@@ -289,29 +302,135 @@
         </div>
     </main>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const sections = document.querySelectorAll('.site-part');
-            const navLinks = document.querySelectorAll('#navigation a');
+    <div id="modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <form id="modTel">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title mt-0" id="myModalLabel">Isi Biodata</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    </div>
+                    <div class="modal-body">
+                        <h6 class="modal-title mt-0" id="myModalLabel">Silahkan lengkapi data berikut sebelum
+                            menggunakan layanan ini.!</h6>
+                        <hr style="margin: 10px 0px;">
 
-            function showSection(id) {
-                sections.forEach(section => {
-                    section.style.display = section.id === id ? 'block' : 'none';
-                });
-            }
+                        <div class="form-group mb-2">
+                            <label>Nama Lengkap</label>
+                            <input type="hidden" id="satker" name="satker" value="8" readonly="">
+                            <input type="hidden" id="layanan" name="layanan" readonly="">
+                            <input type="text" id="nama" name="nama" class="form-control floating-label"
+                                placeholder="Nama Lengkap" required="">
+                        </div>
 
-            navLinks.forEach(link => {
-                link.addEventListener('click', function (event) {
-                    event.preventDefault();
-                    const targetId = this.getAttribute('href').substring(1);
-                    showSection(targetId);
-                });
+                        <div class="form-group mb-0">
+                            <label>Nomor Handphone</label>
+                            <input type="text" id="nope" name="nope" class="form-control floating-label"
+                                placeholder="Nomor Handphone" required="">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary w-md waves-effect waves-light" type="submit">Simpan</button>
+                        <button type="button" class="btn btn-danger waves-effect" data-dismiss="modal">Batal</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </form>
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <!-- JAVASCRIPT -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/jquery.easing.min.js"></script>
+    <script src="assets/js/jquery.validate.min.js"></script>
+    <script src="assets/js/jquery.form.min.js"></script>
+    <script src="assets/js/jquery.countdown.min.js"></script>
+    <script src="assets/js/granim.min.js"></script>
+    <script src="assets/js/vegas.min.js"></script>
+    <script src="assets/js/jquery.mb.YTPlayer.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/modernizr-custom.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // Tampilkan bagian "home" secara default
+            $('#home').show();
+
+            // Tangani klik pada tautan navigasi
+            $('a[href^="#"]').on('click', function (event) {
+                event.preventDefault();
+                var target = $(this.getAttribute('href'));
+
+                if (target.length) {
+                    // Sembunyikan semua bagian
+                    $('.site-part').hide();
+
+                    // Tampilkan bagian yang sesuai
+                    target.show();
+
+                    // Smooth scrolling ke bagian yang dituju
+                    $('html, body').stop().animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                }
             });
 
-            // Show the home section by default
-            showSection('home');
+            $('.view').click(function () {
+                var layanan = $(this).attr("layanan");
+                $('#layanan').val(layanan);
+                $('#modal').modal("show");
+            });
+        });
+
+        $('#modTel').on('submit', function (event) {
+            event.preventDefault();
+            var nama = $('#nama').val();
+            var nope = $('#nope').val();
+            var layanan = $('#layanan').val();
+            var satker = $('#satker').val();
+            $.ajax({
+                url: 'https://ptsp.pta-jakarta.go.id/dashboard/savePengguna',
+                type: 'POST',
+                dataType: 'json',
+                data: {
+                    nama: nama,
+                    nope: nope,
+                    layanan: layanan,
+                    satker: satker
+                },
+            })
+                .done(function (data) {
+                    if (data > 0) {
+                        $('#modal').modal("hide");
+
+                        if (layanan == 'telepon') {
+                            window.location = "tel:(021)58352092"
+                        } else if (layanan == 'zoom') {
+                            window.location = "https://us06web.zoom.us/j/9681050045?pwd=vd3IpbiZt54B6GPIsGEMzSmvot8fuN.1"
+                        }
+                    }
+                })
+                .fail(function () {
+                    console.log("error");
+                })
+                .always(function () {
+                    console.log("complete");
+                });
         });
     </script>
+    <script type='text/javascript'>
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = "https://embed.tawk.to/5db92865e4c2fa4b6bd9177c/default";
+            s1.charset = "UTF-8";
+            s1.setAttribute("crossorigin", "*");
+            s0.parentNode.insertBefore(s1, s0);
+        })();            
+    </script>
+
+
 </body>
 
 </html>
