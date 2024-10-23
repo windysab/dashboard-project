@@ -2,15 +2,12 @@
 <html class="no-js" lang="en-US">
 
 <head>
-
-    <title>PTSP ONLINE PENGADILAN AGAMA KOTABARU</title>
-
+    <title>PTSP Online</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="PELAYANAN TERPADU SATU PINTU PENGADILAN AGAMA KOTABARU">
-    <meta name="keywords" content="PTSP">
-    <meta name="author" content="TIM IT PA KOTABARU">
-
+    <meta name="description" content="Pelayanan Terpadu Satu Pintu Secara Online">
+    <meta name="keywords" content="ptsp">
+    <meta name="author" content="IT Badilag">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/utilities.css">
@@ -21,26 +18,72 @@
     <link rel="stylesheet" href="assets/css/vegas.min.css">
     <link rel="stylesheet" href="assets/css/fonts.css">
     <link href="assets/images/favicon.ico" rel="icon">
+    <style>
+        #home,
+        #lokasi {
+            display: none;
+        }
+
+        .feature-block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .feature-block:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-block img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .feature-block h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .feature-block p {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .feature-block button {
+            font-size: 16px;
+            padding: 10px 20px;
+        }
+    </style>
 </head>
 
 <body class="slideshow-background">
-
+    <!-- Global overlay -->
     <div class="global-overlay">
         <div class="overlay-inner bg-image-holder bg-cover">
             <img src="assets/images/background.jpg" alt="">
         </div>
         <div class="overlay-inner bg-dark opacity-50"></div>
     </div>
+
     <!-- Site header -->
     <header class="site-header header-light header-mobile-light">
         <div class="header-brand">
             <!-- Logo -->
             <a class="logo" href="#">
-                <img src="assets/images/logo2.png" alt="">
+                <img src="assets/images/logo.png" alt="">
             </a>
             <button type="button" id="navigation-toggle" class="nav-toggle">
                 <span></span>
             </button>
+
         </div>
         <div class="header-collapse">
             <div class="header-collapse-inner">
@@ -56,8 +99,17 @@
                             <a href="#contact"><i class="fas fa fa-users mr-2"></i> Petugas PTSP</a>
                         </li>
                     </ul>
+
+
+                    <!-- <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#lokasi">Lokasi</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul> -->
                 </nav>
-                <a href="https://pa-kotabaru.go.id/" class="btn btn-primary" target="_blank">PA KOTABARU</a>
+                <a href="https://pa-amuntai.go.id" class="btn btn-primary" target="_blank"
+                    title="Halaman Website PA Amuntai"><i class="fas fa fa-home mr-2"></i>Pengadilan Agama Amuntai Kelas
+                    IB</a>
             </div>
         </div>
     </header>
@@ -78,15 +130,15 @@
                                         style="font-size: 50px; line-height: 55px;"><strong>PELAYANAN TERPADU <br />SATU
                                             PINTU (PTSP) ONLINE</strong></h1>
                                     <h3 class="text-white mb-0 animated" data-animation="fadeInUp"><strong>PENGADILAN
-                                            AGAMA AMUNTAI KELAS</strong></h3>
+                                            AGAMA AMUNTAI KELAS IB</strong></h3>
 
                                     <p class="lead text-white mb-3 animated" data-animation="fadeInUp"
                                         data-animation-delay="200">Layanan Informasi Secara Online</p>
 
-                                    <h5 class="text-white mt-3 mb-0 text-center"
-                                        style="font-size: 15px; line-height: 15px;"><i
-                                            class="far fa-user-circle mr-1"></i> Pengunjung [ Hari ini : <b>15</b> |
-                                        Bulan ini : <b>214</b> | Total : <b>14158</b>]</h5>
+                                        <h5 class="text-white mt-3 mb-0 text-center" style="font-size: 15px; line-height: 15px;">
+                                            <i class="far fa-user-circle mr-1"></i> Pengunjung [ Hari ini : <b id="todayCount">15</b> |
+                                            Bulan ini : <b id="monthCount">214</b> | Total : <b id="totalCount">14158</b>]
+                                        </h5>
                                 </div>
                             </div>
                             <div class="mt-3 mb-3 text-center">
@@ -173,9 +225,10 @@
                                 </div>
                             </div>
                             <iframe
-                                src="https://www.google.com/maps/place/Pengadilan+Agama+Jakarta+Barat/@-6.1850224,106.7530042,17z/data=!3m1!4b1!4m5!3m4!1s0x2e69f0c266357451:0xe435ae262abb7bea!8m2!3d-6.1850277!4d106.7551929"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3949.933793548013!2d115.244802!3d-2.4140289!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2de538e54d15a729%3A0xc3f1c2d7b29605b1!2sPengadilan%20Agama%20Amuntai%20Kelas%20IB!5e0!3m2!1sen!2sid!4v1697041234567!5m2!1sen!2sid"
                                 width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen=""
-                                aria-hidden="false" tabindex="0" class="animated mt-0"></iframe>
+                                aria-hidden="false" tabindex="0" class="animated mt-0">
+                            </iframe>
                         </div>
                     </section>
                 </div>
@@ -194,12 +247,12 @@
 
                                 <div class="col-12 col-lg-3 mb-3 text-center">
                                     <img class="shadow img-fluid img-rounded mb-0 animated" data-animation="fadeInUp"
-                                        data-animation-delay="600" src="assets/images/viky1.png" alt="">
+                                        data-animation-delay="600" src="assets/images/yusuf.jpg" alt="">
                                     <div class="feature-block p-3 bg-success text-black animated"
                                         data-animation="fadeInUp" data-animation-delay="600">
 
                                         <h2 class="mb-0"><strong>LAYANAN INFORMASI</strong></h2>
-                                        <p class="h5 mb-2">Viky Nur Yunanda, S.H.</p>
+                                        <p class="h5 mb-2">Yusup Iskandar, S.H.</p>
                                         <!--<a href="tel:06414811133" type="button" class="btn btn-block btn-primary btn-pill mb-0 mr-0">
                                             <i class="fab fas fa-phone-volume  mr-1"></i> Mulai Panggilan
                                         </a>-->
@@ -208,12 +261,12 @@
 
                                 <div class="col-12 col-lg-3 mb-3 text-center">
                                     <img class="shadow img-fluid img-rounded mb-0 animated" data-animation="fadeInUp"
-                                        data-animation-delay="600" src="assets/images/Afifah.jpeg" alt="">
+                                        data-animation-delay="600" src="assets/images/arif.jpg" alt="">
                                     <div class="feature-block p-3 bg-success text-black animated"
                                         data-animation="fadeInUp" data-animation-delay="600">
 
                                         <h2 class="mb-0"><strong>LAYANAN PENDAFTARAN </strong></h2>
-                                        <p class="h5 mb-2">Miftakul Afifah, A.Md.A.B.</p>
+                                        <p class="h5 mb-2">Arif, S.H</p>
                                         <!--<a href="https://us05web.zoom.us/j/2731675797?pwd=aGlncUNialhBUk1CKzg3OVQzUzJGUT09#success" target="_blank" type="button" class="btn btn-block btn-primary btn-pill mb-0 mr-0">
                                             <i class="fab fas fa-video mr-1"></i> Buka Aplikasi Zoom
                                         </a>-->
@@ -222,12 +275,12 @@
 
                                 <div class="col-12 col-lg-3 mb-3 text-center">
                                     <img class="shadow img-fluid img-rounded mb-0 animated" data-animation="fadeInUp"
-                                        data-animation-delay="600" src="assets/images/nurul1.jpg" alt="">
+                                        data-animation-delay="600" src="assets/images/Bu_Dahliani.jpg" alt="">
                                     <div class="feature-block p-3 bg-success text-black animated"
                                         data-animation="fadeInUp" data-animation-delay="600">
 
                                         <h2 class="mb-0"><strong>LAYANAN PEMBAYARAN</strong></h2>
-                                        <p class="h5 mb-2">Nurul Hikmah, S.P.</p>
+                                        <p class="h5 mb-2">Dahliani, S.H.</p>
                                         <!--<a href="https://api.whatsapp.com/send?phone=085215053471&text=Saya%20ingin%20bertanya%20sesuatu" target="_blank" type="button" class="btn btn-block btn-primary btn-pill mb-0 mr-0">
                                             <i class="fab fas fa-video mr-1"></i> Klik Untuk Mulai Percakapan
                                         </a>-->
@@ -236,16 +289,32 @@
 
                                 <div class="col-12 col-lg-3 mb-3 text-center">
                                     <img class="shadow img-fluid img-rounded mb-0 animated" data-animation="fadeInUp"
-                                        data-animation-delay="600" src="assets/images/pirda1.jpg" alt="">
+                                        data-animation-delay="600" src="assets/images/lina3.jpeg" alt="">
                                     <div class="feature-block p-3 bg-success text-black animated"
                                         data-animation="fadeInUp" data-animation-delay="600">
 
                                         <h2 class="mb-0"><strong>LAYANAN PRODUK</strong></h2>
-                                        <p class="h5 mb-2">Pirda Rahimi, S.H.</p>
+                                        <p class="h5 mb-2">Yuli Herlina, S.H</p>
                                         <!--<a href="https://api.whatsapp.com/send?phone=085215053471&text=Saya%20ingin%20bertanya%20sesuatu" target="_blank" type="button" class="btn btn-block btn-primary btn-pill mb-0 mr-0">
                                             <i class="fab fas fa-video mr-1"></i> Klik Untuk Mulai Percakapan
                                         </a>-->
                                     </div>
+                                    
+                                </div>
+
+                                <div class="col-12 col-lg-3 mb-3 text-center">
+                                    <img class="shadow img-fluid img-rounded mb-0 animated" data-animation="fadeInUp"
+                                        data-animation-delay="600" src="assets/images/Coky_Wib.jpg" alt="">
+                                    <div class="feature-block p-3 bg-success text-black animated"
+                                        data-animation="fadeInUp" data-animation-delay="600">
+
+                                        <h2 class="mb-0"><strong>LAYANAN E-court</strong></h2>
+                                        <p class="h5 mb-2">Marzuki Na'ma, S.Kom. M.H</p>
+                                        <!--<a href="https://api.whatsapp.com/send?phone=085215053471&text=Saya%20ingin%20bertanya%20sesuatu" target="_blank" type="button" class="btn btn-block btn-primary btn-pill mb-0 mr-0">
+                                            <i class="fab fas fa-video mr-1"></i> Klik Untuk Mulai Percakapan
+                                        </a>-->
+                                    </div>
+                                    
                                 </div>
 
                             </div>
@@ -256,17 +325,45 @@
 
             </div>
         </div>
-        </div>
-        </div>
-        </div>
     </main>
 
-    <!-- Site footer 
-				<p class="text-center">© 2019 Muriel - All Rights Reserved</p>
-		</footer>
+    <div id="modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <form id="modTel">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title mt-0" id="myModalLabel">Isi Biodata</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    </div>
+                    <div class="modal-body">
+                        <h6 class="modal-title mt-0" id="myModalLabel">Silahkan lengkapi data berikut sebelum
+                            menggunakan layanan ini.!</h6>
+                        <hr style="margin: 10px 0px;">
 
-		-->
+                        <div class="form-group mb-2">
+                            <label>Nama Lengkap</label>
+                            <input type="hidden" id="satker" name="satker" value="8" readonly="">
+                            <input type="hidden" id="layanan" name="layanan" readonly="">
+                            <input type="text" id="nama" name="nama" class="form-control floating-label"
+                                placeholder="Nama Lengkap" required="">
+                        </div>
 
+                        <div class="form-group mb-0">
+                            <label>Nomor Handphone</label>
+                            <input type="text" id="nope" name="nope" class="form-control floating-label"
+                                placeholder="Nomor Handphone" required="">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary w-md waves-effect waves-light" type="submit">Simpan</button>
+                        <button type="button" class="btn btn-danger waves-effect" data-dismiss="modal">Batal</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </form>
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <!-- JAVASCRIPT -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/jquery.easing.min.js"></script>
@@ -276,17 +373,127 @@
     <script src="assets/js/granim.min.js"></script>
     <script src="assets/js/vegas.min.js"></script>
     <script src="assets/js/jquery.mb.YTPlayer.min.js"></script>
-
     <script src="assets/js/main.js"></script>
-    <!-- Bootstrap core JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Core theme JS-->
-    <script src="js/scripts.js"></script>
-    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-    <!-- * *                               SB Forms JS                               * *-->
-    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    <script src="assets/js/modernizr-custom.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            // Tampilkan bagian "home" secara default
+            $('#home').show();
+
+            // Tangani klik pada tautan navigasi
+            $('a[href^="#"]').on('click', function (event) {
+                event.preventDefault();
+                var target = $(this.getAttribute('href'));
+
+                if (target.length) {
+                    // Sembunyikan semua bagian
+                    // $('.site-part').hide();
+
+                    // Tampilkan bagian yang sesuai
+                    target.show();
+
+                    // Smooth scrolling ke bagian yang dituju
+                    $('html, body').stop().animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                }
+            });
+
+            $('.view').click(function () {
+                var layanan = $(this).attr("layanan");
+                $('#layanan').val(layanan);
+                $('#modal').modal("show");
+            });
+        });
+
+        $('#modTel').on('submit', function (event) {
+            event.preventDefault();
+            var nama = $('#nama').val();
+            var nope = $('#nope').val();
+            var layanan = $('#layanan').val();
+            var satker = $('#satker').val();
+            $.ajax({
+                url: 'https://ptsp.pta-jakarta.go.id/dashboard/savePengguna',
+                type: 'POST',
+                dataType: 'json',
+                data: {
+                    nama: nama,
+                    nope: nope,
+                    layanan: layanan,
+                    satker: satker
+                },
+            })
+                .done(function (data) {
+                    if (data > 0) {
+                        $('#modal').modal("hide");
+
+                        if (layanan == 'telepon') {
+                            window.location = "tel:(021)58352092"
+                        } else if (layanan == 'zoom') {
+                            window.location = "https://us06web.zoom.us/j/9681050045?pwd=vd3IpbiZt54B6GPIsGEMzSmvot8fuN.1"
+                        }
+                    }
+                })
+                .fail(function () {
+                    console.log("error");
+                })
+                .always(function () {
+                    console.log("complete");
+                });
+        });
+    </script>
+    <script type='text/javascript'>
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = "https://embed.tawk.to/5db92865e4c2fa4b6bd9177c/default";
+            s1.charset = "UTF-8";
+            s1.setAttribute("crossorigin", "*");
+            s0.parentNode.insertBefore(s1, s0);
+        })();            
+    </script>
+
+<script>
+    function updateVisitorCount() {
+        const today = new Date().toLocaleDateString();
+        const month = new Date().getMonth();
+        
+        let totalCount = localStorage.getItem('totalCount') || 0;
+        let todayCount = localStorage.getItem('todayCount') || 0;
+        let todayDate = localStorage.getItem('todayDate') || today;
+        let monthCount = localStorage.getItem('monthCount') || 0;
+        let currentMonth = localStorage.getItem('currentMonth') || month;
+
+        if (todayDate !== today) {
+            todayCount = 0;
+            todayDate = today;
+        }
+
+        if (currentMonth != month) {
+            monthCount = 0;
+            currentMonth = month;
+        }
+
+        totalCount++;
+        todayCount++;
+        monthCount++;
+
+        localStorage.setItem('totalCount', totalCount);
+        localStorage.setItem('todayCount', todayCount);
+        localStorage.setItem('todayDate', todayDate);
+        localStorage.setItem('monthCount', monthCount);
+        localStorage.setItem('currentMonth', currentMonth);
+
+        document.getElementById('totalCount').innerText = totalCount;
+        document.getElementById('todayCount').innerText = todayCount;
+        document.getElementById('monthCount').innerText = monthCount;
+    }
+
+    updateVisitorCount();
+</script>
+
 
 </body>
 
