@@ -83,7 +83,7 @@
             <button type="button" id="navigation-toggle" class="nav-toggle">
                 <span></span>
             </button>
-            
+
         </div>
         <div class="header-collapse">
             <div class="header-collapse-inner">
@@ -99,16 +99,16 @@
                             <a href="#contact"><i class="fas fa fa-users mr-2"></i> Petugas PTSP</a>
                         </li>
                     </ul>
-                    
 
-                     <!-- <ul>
+
+                    <!-- <ul>
                         <li><a href="#home">Home</a></li>
                         <li><a href="#lokasi">Lokasi</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul> -->
                 </nav>
                 <a href="https://pa-amuntai.go.id" class="btn btn-primary" target="_blank"
-                    title="Halaman Website PA Amuntai"><i class="fas fa fa-home mr-2"></i>Pengadilan Agama Amuntai Keles
+                    title="Halaman Website PA Amuntai"><i class="fas fa fa-home mr-2"></i>Pengadilan Agama Amuntai Kelas
                     IB</a>
             </div>
         </div>
@@ -130,15 +130,15 @@
                                         style="font-size: 50px; line-height: 55px;"><strong>PELAYANAN TERPADU <br />SATU
                                             PINTU (PTSP) ONLINE</strong></h1>
                                     <h3 class="text-white mb-0 animated" data-animation="fadeInUp"><strong>PENGADILAN
-                                            AGAMA AMUNTAI KELAS</strong></h3>
+                                            AGAMA AMUNTAI KELAS IB</strong></h3>
 
                                     <p class="lead text-white mb-3 animated" data-animation="fadeInUp"
                                         data-animation-delay="200">Layanan Informasi Secara Online</p>
 
-                                    <h5 class="text-white mt-3 mb-0 text-center"
-                                        style="font-size: 15px; line-height: 15px;"><i
-                                            class="far fa-user-circle mr-1"></i> Pengunjung [ Hari ini : <b>15</b> |
-                                        Bulan ini : <b>214</b> | Total : <b>14158</b>]</h5>
+                                        <h5 class="text-white mt-3 mb-0 text-center" style="font-size: 15px; line-height: 15px;">
+                                            <i class="far fa-user-circle mr-1"></i> Pengunjung [ Hari ini : <b id="todayCount">15</b> |
+                                            Bulan ini : <b id="monthCount">214</b> | Total : <b id="totalCount">14158</b>]
+                                        </h5>
                                 </div>
                             </div>
                             <div class="mt-3 mb-3 text-center">
@@ -225,9 +225,10 @@
                                 </div>
                             </div>
                             <iframe
-                                src="https://www.google.com/maps/place/Pengadilan+Agama+Jakarta+Barat/@-6.1850224,106.7530042,17z/data=!3m1!4b1!4m5!3m4!1s0x2e69f0c266357451:0xe435ae262abb7bea!8m2!3d-6.1850277!4d106.7551929"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3949.933793548013!2d115.244802!3d-2.4140289!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2de538e54d15a729%3A0xc3f1c2d7b29605b1!2sPengadilan%20Agama%20Amuntai%20Kelas%20IB!5e0!3m2!1sen!2sid!4v1697041234567!5m2!1sen!2sid"
                                 width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen=""
-                                aria-hidden="false" tabindex="0" class="animated mt-0"></iframe>
+                                aria-hidden="false" tabindex="0" class="animated mt-0">
+                            </iframe>
                         </div>
                     </section>
                 </div>
@@ -363,33 +364,33 @@
         $(document).ready(function () {
             // Tampilkan bagian "home" secara default
             $('#home').show();
-    
+
             // Tangani klik pada tautan navigasi
             $('a[href^="#"]').on('click', function (event) {
                 event.preventDefault();
                 var target = $(this.getAttribute('href'));
-    
+
                 if (target.length) {
                     // Sembunyikan semua bagian
                     // $('.site-part').hide();
-    
+
                     // Tampilkan bagian yang sesuai
                     target.show();
-    
+
                     // Smooth scrolling ke bagian yang dituju
                     $('html, body').stop().animate({
                         scrollTop: target.offset().top
                     }, 1000);
                 }
             });
-    
+
             $('.view').click(function () {
                 var layanan = $(this).attr("layanan");
                 $('#layanan').val(layanan);
                 $('#modal').modal("show");
             });
         });
-    
+
         $('#modTel').on('submit', function (event) {
             event.preventDefault();
             var nama = $('#nama').val();
@@ -410,7 +411,7 @@
                 .done(function (data) {
                     if (data > 0) {
                         $('#modal').modal("hide");
-    
+
                         if (layanan == 'telepon') {
                             window.location = "tel:(021)58352092"
                         } else if (layanan == 'zoom') {
@@ -437,6 +438,45 @@
             s0.parentNode.insertBefore(s1, s0);
         })();            
     </script>
+
+<script>
+    function updateVisitorCount() {
+        const today = new Date().toLocaleDateString();
+        const month = new Date().getMonth();
+        
+        let totalCount = localStorage.getItem('totalCount') || 0;
+        let todayCount = localStorage.getItem('todayCount') || 0;
+        let todayDate = localStorage.getItem('todayDate') || today;
+        let monthCount = localStorage.getItem('monthCount') || 0;
+        let currentMonth = localStorage.getItem('currentMonth') || month;
+
+        if (todayDate !== today) {
+            todayCount = 0;
+            todayDate = today;
+        }
+
+        if (currentMonth != month) {
+            monthCount = 0;
+            currentMonth = month;
+        }
+
+        totalCount++;
+        todayCount++;
+        monthCount++;
+
+        localStorage.setItem('totalCount', totalCount);
+        localStorage.setItem('todayCount', todayCount);
+        localStorage.setItem('todayDate', todayDate);
+        localStorage.setItem('monthCount', monthCount);
+        localStorage.setItem('currentMonth', currentMonth);
+
+        document.getElementById('totalCount').innerText = totalCount;
+        document.getElementById('todayCount').innerText = todayCount;
+        document.getElementById('monthCount').innerText = monthCount;
+    }
+
+    updateVisitorCount();
+</script>
 
 
 </body>
