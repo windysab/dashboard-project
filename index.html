@@ -31,7 +31,7 @@
             justify-content: center;
             background-color: #f8f9fa;
             border-radius: 10px;
-            padding: 20px;
+            padding: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s;
         }
@@ -44,22 +44,31 @@
             max-width: 100%;
             height: auto;
             border-radius: 10px;
-            margin-bottom: 15px;
-        }
-
-        .feature-block h2 {
-            font-size: 24px;
             margin-bottom: 10px;
         }
 
-        .feature-block p {
-            font-size: 16px;
-            margin-bottom: 15px;
+        .feature-block h4 {
+            font-size: 18px;
+            margin-bottom: 5px;
         }
 
-        .feature-block button {
-            font-size: 16px;
-            padding: 10px 20px;
+        .feature-block p {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .feature-block {
+                padding: 5px;
+            }
+
+            .feature-block h4 {
+                font-size: 16px;
+            }
+
+            .feature-block p {
+                font-size: 12px;
+            }
         }
     </style>
 </head>
@@ -135,10 +144,12 @@
                                     <p class="lead text-white mb-3 animated" data-animation="fadeInUp"
                                         data-animation-delay="200">Layanan Informasi Secara Online</p>
 
-                                        <h5 class="text-white mt-3 mb-0 text-center" style="font-size: 15px; line-height: 15px;">
-                                            <i class="far fa-user-circle mr-1"></i> Pengunjung [ Hari ini : <b id="todayCount">15</b> |
-                                            Bulan ini : <b id="monthCount">214</b> | Total : <b id="totalCount">14158</b>]
-                                        </h5>
+                                    <h5 class="text-white mt-3 mb-0 text-center"
+                                        style="font-size: 15px; line-height: 15px;">
+                                        <i class="far fa-user-circle mr-1"></i> Pengunjung [ Hari ini : <b
+                                            id="todayCount">15</b> |
+                                        Bulan ini : <b id="monthCount">214</b> | Total : <b id="totalCount">14158</b>]
+                                    </h5>
                                 </div>
                             </div>
                             <div class="mt-3 mb-3 text-center">
@@ -243,86 +254,56 @@
                                         data-animation-delay="200"><span></span></div>
                                 </div>
                             </div>
-                            <div class="row">
-
-                                <div class="col-12 col-lg-3 mb-3 text-center">
+                            <div class="row justify-content-center">
+                                <div class="col-6 col-md-4 col-lg-2 mb-3 text-center">
                                     <img class="shadow img-fluid img-rounded mb-0 animated" data-animation="fadeInUp"
                                         data-animation-delay="600" src="assets/images/yusuf.jpg" alt="">
-                                    <div class="feature-block p-3 bg-success text-black animated"
+                                    <div class="feature-block p-2 bg-success text-black animated"
                                         data-animation="fadeInUp" data-animation-delay="600">
-
-                                        <h2 class="mb-0"><strong>LAYANAN INFORMASI</strong></h2>
-                                        <p class="h5 mb-2">Yusup Iskandar, S.H.</p>
-                                        <!--<a href="tel:06414811133" type="button" class="btn btn-block btn-primary btn-pill mb-0 mr-0">
-                                            <i class="fab fas fa-phone-volume  mr-1"></i> Mulai Panggilan
-                                        </a>-->
+                                        <h4 class="mb-0"><strong>LAYANAN INFORMASI</strong></h4>
+                                        <p class="h6 mb-2">Yusup Iskandar, S.H.</p>
                                     </div>
                                 </div>
-
-                                <div class="col-12 col-lg-3 mb-3 text-center">
+                                <div class="col-6 col-md-4 col-lg-2 mb-3 text-center">
                                     <img class="shadow img-fluid img-rounded mb-0 animated" data-animation="fadeInUp"
                                         data-animation-delay="600" src="assets/images/arif.jpg" alt="">
-                                    <div class="feature-block p-3 bg-success text-black animated"
+                                    <div class="feature-block p-2 bg-success text-black animated"
                                         data-animation="fadeInUp" data-animation-delay="600">
-
-                                        <h2 class="mb-0"><strong>LAYANAN PENDAFTARAN </strong></h2>
-                                        <p class="h5 mb-2">Arif, S.H</p>
-                                        <!--<a href="https://us05web.zoom.us/j/2731675797?pwd=aGlncUNialhBUk1CKzg3OVQzUzJGUT09#success" target="_blank" type="button" class="btn btn-block btn-primary btn-pill mb-0 mr-0">
-                                            <i class="fab fas fa-video mr-1"></i> Buka Aplikasi Zoom
-                                        </a>-->
+                                        <h4 class="mb-0"><strong>LAYANAN PENDAFTARAN</strong></h4>
+                                        <p class="h6 mb-2">Arif, S.H</p>
                                     </div>
                                 </div>
-
-                                <div class="col-12 col-lg-3 mb-3 text-center">
+                                <div class="col-6 col-md-4 col-lg-2 mb-3 text-center">
                                     <img class="shadow img-fluid img-rounded mb-0 animated" data-animation="fadeInUp"
                                         data-animation-delay="600" src="assets/images/Bu_Dahliani.jpg" alt="">
-                                    <div class="feature-block p-3 bg-success text-black animated"
+                                    <div class="feature-block p-2 bg-success text-black animated"
                                         data-animation="fadeInUp" data-animation-delay="600">
-
-                                        <h2 class="mb-0"><strong>LAYANAN PEMBAYARAN</strong></h2>
-                                        <p class="h5 mb-2">Dahliani, S.H.</p>
-                                        <!--<a href="https://api.whatsapp.com/send?phone=085215053471&text=Saya%20ingin%20bertanya%20sesuatu" target="_blank" type="button" class="btn btn-block btn-primary btn-pill mb-0 mr-0">
-                                            <i class="fab fas fa-video mr-1"></i> Klik Untuk Mulai Percakapan
-                                        </a>-->
+                                        <h4 class="mb-0"><strong>LAYANAN PEMBAYARAN</strong></h4>
+                                        <p class="h6 mb-2">Dahliani, S.H.</p>
                                     </div>
                                 </div>
-
-                                <div class="col-12 col-lg-3 mb-3 text-center">
+                                <div class="col-6 col-md-4 col-lg-2 mb-3 text-center">
                                     <img class="shadow img-fluid img-rounded mb-0 animated" data-animation="fadeInUp"
                                         data-animation-delay="600" src="assets/images/lina3.jpeg" alt="">
-                                    <div class="feature-block p-3 bg-success text-black animated"
+                                    <div class="feature-block p-2 bg-success text-black animated"
                                         data-animation="fadeInUp" data-animation-delay="600">
-
-                                        <h2 class="mb-0"><strong>LAYANAN PRODUK</strong></h2>
-                                        <p class="h5 mb-2">Yuli Herlina, S.H</p>
-                                        <!--<a href="https://api.whatsapp.com/send?phone=085215053471&text=Saya%20ingin%20bertanya%20sesuatu" target="_blank" type="button" class="btn btn-block btn-primary btn-pill mb-0 mr-0">
-                                            <i class="fab fas fa-video mr-1"></i> Klik Untuk Mulai Percakapan
-                                        </a>-->
+                                        <h4 class="mb-0"><strong>LAYANAN PRODUK</strong></h4>
+                                        <p class="h6 mb-2">Yuli Herlina, S.H</p>
                                     </div>
-                                    
                                 </div>
-
-                                <div class="col-12 col-lg-3 mb-3 text-center">
+                                <div class="col-6 col-md-4 col-lg-2 mb-3 text-center">
                                     <img class="shadow img-fluid img-rounded mb-0 animated" data-animation="fadeInUp"
                                         data-animation-delay="600" src="assets/images/Coky_Wib.jpg" alt="">
-                                    <div class="feature-block p-3 bg-success text-black animated"
+                                    <div class="feature-block p-2 bg-success text-black animated"
                                         data-animation="fadeInUp" data-animation-delay="600">
-
-                                        <h2 class="mb-0"><strong>LAYANAN E-court</strong></h2>
-                                        <p class="h5 mb-2">Marzuki Na'ma, S.Kom. M.H</p>
-                                        <!--<a href="https://api.whatsapp.com/send?phone=085215053471&text=Saya%20ingin%20bertanya%20sesuatu" target="_blank" type="button" class="btn btn-block btn-primary btn-pill mb-0 mr-0">
-                                            <i class="fab fas fa-video mr-1"></i> Klik Untuk Mulai Percakapan
-                                        </a>-->
+                                        <h4 class="mb-0"><strong>LAYANAN E-court</strong></h4>
+                                        <p class="h6 mb-2">Marzuki Na'ma, S.Kom. M.H</p>
                                     </div>
-                                    
                                 </div>
-
                             </div>
-
                         </div>
                     </section>
                 </div>
-
             </div>
         </div>
     </main>
@@ -455,44 +436,44 @@
         })();            
     </script>
 
-<script>
-    function updateVisitorCount() {
-        const today = new Date().toLocaleDateString();
-        const month = new Date().getMonth();
-        
-        let totalCount = localStorage.getItem('totalCount') || 0;
-        let todayCount = localStorage.getItem('todayCount') || 0;
-        let todayDate = localStorage.getItem('todayDate') || today;
-        let monthCount = localStorage.getItem('monthCount') || 0;
-        let currentMonth = localStorage.getItem('currentMonth') || month;
+    <script>
+        function updateVisitorCount() {
+            const today = new Date().toLocaleDateString();
+            const month = new Date().getMonth();
 
-        if (todayDate !== today) {
-            todayCount = 0;
-            todayDate = today;
+            let totalCount = localStorage.getItem('totalCount') || 0;
+            let todayCount = localStorage.getItem('todayCount') || 0;
+            let todayDate = localStorage.getItem('todayDate') || today;
+            let monthCount = localStorage.getItem('monthCount') || 0;
+            let currentMonth = localStorage.getItem('currentMonth') || month;
+
+            if (todayDate !== today) {
+                todayCount = 0;
+                todayDate = today;
+            }
+
+            if (currentMonth != month) {
+                monthCount = 0;
+                currentMonth = month;
+            }
+
+            totalCount++;
+            todayCount++;
+            monthCount++;
+
+            localStorage.setItem('totalCount', totalCount);
+            localStorage.setItem('todayCount', todayCount);
+            localStorage.setItem('todayDate', todayDate);
+            localStorage.setItem('monthCount', monthCount);
+            localStorage.setItem('currentMonth', currentMonth);
+
+            document.getElementById('totalCount').innerText = totalCount;
+            document.getElementById('todayCount').innerText = todayCount;
+            document.getElementById('monthCount').innerText = monthCount;
         }
 
-        if (currentMonth != month) {
-            monthCount = 0;
-            currentMonth = month;
-        }
-
-        totalCount++;
-        todayCount++;
-        monthCount++;
-
-        localStorage.setItem('totalCount', totalCount);
-        localStorage.setItem('todayCount', todayCount);
-        localStorage.setItem('todayDate', todayDate);
-        localStorage.setItem('monthCount', monthCount);
-        localStorage.setItem('currentMonth', currentMonth);
-
-        document.getElementById('totalCount').innerText = totalCount;
-        document.getElementById('todayCount').innerText = todayCount;
-        document.getElementById('monthCount').innerText = monthCount;
-    }
-
-    updateVisitorCount();
-</script>
+        updateVisitorCount();
+    </script>
 
 
 </body>
