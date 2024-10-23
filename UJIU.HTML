@@ -14,37 +14,23 @@
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/utilities.css">
-
     <link rel="stylesheet" href="assets/css/custom.css">
-
     <link rel="stylesheet" href="assets/css/fontawesome/all.min.css" type="text/css">
     <link rel="stylesheet" href="assets/css/themify-icons.css" type="text/css">
     <link rel="stylesheet" href="assets/css/animate.min.css">
     <link rel="stylesheet" href="assets/css/vegas.min.css">
-
-    <link rel="shortcut icon" href="assets/images/favicon.png">
-
-    <!-- Google fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
-
-    <script src="assets/js/modernizr-custom.js"></script>
-
+    <link rel="stylesheet" href="assets/css/fonts.css">
+    <link href="assets/images/favicon.ico" rel="icon">
 </head>
 
 <body class="slideshow-background">
 
-    <div id="preloader" class="preloader">
-        <div class="loader-status">
-            <div class="spinner"></div>
-        </div>
-    </div>
-
-    <!-- Global overlay -->
     <div class="global-overlay">
-        <div class="overlay-inner bg-dark opacity-95"></div>
+        <div class="overlay-inner bg-image-holder bg-cover">
+            <img src="assets/images/background.jpg" alt="">
+        </div>
+        <div class="overlay-inner bg-dark opacity-50"></div>
     </div>
-
     <!-- Site header -->
     <header class="site-header header-light header-mobile-light">
         <div class="header-brand">
@@ -61,16 +47,13 @@
                 <nav class="site-nav">
                     <ul id="navigation">
                         <li>
-                            <a href="#home">BERANDA</a>
+                            <a href="#home"><i class="fas fa fa-home mr-2"></i> Home</a>
                         </li>
                         <li>
-                            <a href="#services">LAYANAN KAMI</a>
+                            <a href="#lokasi"><i class="fas fa-search-location mr-2"></i> Lokasi</a>
                         </li>
                         <li>
-                            <a href="#contact">PETUGAS PTSP</a>
-                        </li>
-                        <li>
-                            <a href="#syarat">SYARAT-SYARAT</a>
+                            <a href="#contact"><i class="fas fa fa-users mr-2"></i> Petugas PTSP</a>
                         </li>
                     </ul>
                 </nav>
@@ -88,268 +71,185 @@
                         <div class="container align-self-center text-white">
                             <div class="row">
                                 <div class="col-lg-10 mx-lg-auto text-center">
-                                    <h3 class="text-white mb-0 animated" data-animation="fadeInUp" style="font-size: 40px; line-height: 45px;"><strong>SELAMAT DATANG DI</strong></h3>
-                                    <h1 class="text-white mb-0 animated" data-animation="fadeInUp" style="font-size: 50px; line-height: 55px;"><strong>PELAYANAN TERPADU <br />SATU PINTU (PTSP) ONLINE</strong></h1>
-                                    <h3 class="text-white mb-0 animated" data-animation="fadeInUp"><strong>PENGADILAN AGAMA KOTABARU</strong></h3>
+                                    <h3 class="text-white mb-0 animated" data-animation="fadeInUp"
+                                        style="font-size: 40px; line-height: 45px;"><strong>Selamat Datang Di</strong>
+                                    </h3>
+                                    <h1 class="text-white mb-0 animated" data-animation="fadeInUp"
+                                        style="font-size: 50px; line-height: 55px;"><strong>PELAYANAN TERPADU <br />SATU
+                                            PINTU (PTSP) ONLINE</strong></h1>
+                                    <h3 class="text-white mb-0 animated" data-animation="fadeInUp"><strong>PENGADILAN
+                                            AGAMA AMUNTAI KELAS</strong></h3>
 
-                                    <p class="lead text-white mb-3 animated" data-animation="fadeInUp" data-animation-delay="200">LAYANAN INFORMASI SECARA ONLINE</p>
-                                    <a href="#services" class="btn btn-primary btn-pill pl-4 pr-4 pt-2 pb-2 mr-3 scrollto animated" data-animation="fadeInUp" data-animation-delay="400">Lihat Layanan <i class="fas fa fa-arrow-right ml-2"></i></a>
-                                    <!--
-										<a href="#subscribe" class="btn btn-primary scrollto animated" data-animation="fadeInUp" data-animation-delay="600">Subscribe</a>
-										-->
+                                    <p class="lead text-white mb-3 animated" data-animation="fadeInUp"
+                                        data-animation-delay="200">Layanan Informasi Secara Online</p>
+
+                                    <h5 class="text-white mt-3 mb-0 text-center"
+                                        style="font-size: 15px; line-height: 15px;"><i
+                                            class="far fa-user-circle mr-1"></i> Pengunjung [ Hari ini : <b>15</b> |
+                                        Bulan ini : <b>214</b> | Total : <b>14158</b>]</h5>
                                 </div>
                             </div>
-                            <div class="mt-5 mb-5 text-center">
+                            <div class="mt-3 mb-3 text-center">
                                 <span class="mr-2">
-                                    <a href="https://www.facebook.com/pa.kotabaru/" target="_blank" class="btn btn-lg btn-primary btn-icon rounded-circle mb-2 mr-2">
+                                    <a href="https://www.facebook.com/pengadilanagama.jakbar" target="_blank"
+                                        class="btn btn-lg btn-primary btn-icon rounded-circle mb-2 mr-2">
                                         <i class="fab fa-facebook-f mt-3"></i>
                                     </a>
                                 </span>
                                 <span class="mr-2">
-                                    <a href="https://www.youtube.com/channel/UCetM4laAPwc0Ao89dsmZ12w" target="_blank" class="btn btn-lg btn-danger btn-icon rounded-circle mb-2 mr-2">
+                                    <a href="https://www.youtube.com/c/PengadilanAgamaJakartaBarat" target="_blank"
+                                        class="btn btn-lg btn-danger btn-icon rounded-circle mb-2 mr-2">
                                         <i class="fab fa-youtube mt-3"></i>
                                     </a>
                                 </span>
                                 <span class="mr-2">
-                                    <a href="https://www.instagram.com/humaspakotabaru/" target="_blank" class="btn btn-lg btn-secondary btn-icon rounded-circle mb-2 mr-2">
+                                    <a href="https://www.instagram.com/pa_jakartabarat/" target="_blank"
+                                        class="btn btn-lg btn-secondary btn-icon rounded-circle mb-2 mr-2">
                                         <i class="fab fa-instagram mt-3"></i>
                                     </a>
                                 </span>
                             </div>
 
-                            <h5 class="text-white mt-3 mb-0 text-center" style="font-size: 15px; line-height: 15px;"><i class="far fa-user-circle mr-1"></i> Pengunjung [ Hari ini : <b>9</b> | Bulan ini : <b>9</b> | Total : <b>9</b>]</h5>
+                            <div class="row">
+                                <div class="col-12 col-lg-4 mb-3 text-center">
+                                    <img class="shadow img-fluid img-rounded mb-0 animated" data-animation="fadeInUp"
+                                        data-animation-delay="600" src="assets/images/layanan_telepon.jpg"
+                                        alt="Layanan Telepon">
+                                    <div class="feature-block p-3 bg-white text-black animated"
+                                        data-animation="fadeInUp" data-animation-delay="600">
+                                        <h2 class="mb-0"><strong>Voice Call</strong></h2>
+                                        <p class="h5 mb-2">Layanan Informasi Melalui Telepon.</p>
+                                        <button type="button" layanan="telepon"
+                                            class="view btn btn-block btn-primary btn-pill mb-0 mr-0">
+                                            <i class="fab fas fa-phone-volume mr-1"></i> 0527 - 61002
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-lg-4 mb-3 text-center">
+                                    <img class="shadow img-fluid img-rounded mb-0 animated" data-animation="fadeInUp"
+                                        data-animation-delay="600" src="assets/images/layanan_zoom.jpg"
+                                        alt="Layanan Zoom">
+                                    <div class="feature-block p-3 bg-white text-black animated"
+                                        data-animation="fadeInUp" data-animation-delay="600">
+                                        <h2 class="mb-0"><strong>Video Call</strong></h2>
+                                        <p class="h5 mb-2">Layanan Informasi Melalui ZOOM.</p>
+                                        <button type="button" layanan="zoom"
+                                            class="view btn btn-block btn-primary btn-pill mb-0 mr-0">
+                                            <i class="fab fas fa-video mr-1"></i> Buka Aplikasi Zoom
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-lg-4 mb-3 text-center">
+                                    <img class="shadow img-fluid img-rounded mb-0 animated" data-animation="fadeInUp"
+                                        data-animation-delay="600" src="assets/images/layanan_chat.jpg"
+                                        alt="Layanan Chat">
+                                    <div class="feature-block p-3 bg-white text-black animated"
+                                        data-animation="fadeInUp" data-animation-delay="600">
+                                        <h2 class="mb-0"><strong>Online Chat</strong></h2>
+                                        <p class="h5 mb-2">Layanan Informasi Melalui Chat.</p>
+                                        <button type="button" class="btn btn-block btn-primary btn-pill mb-0 mr-0">
+                                            <i class="fab fab fa-facebook-messenger mr-1"></i> Klik Mulai
+                                            Percakapan/Kirim Pesan
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </section>
                 </div>
 
-                <div class="site-part" id="services">
+                <div class="site-part" id="lokasi">
                     <section class="min-vh-100 d-flex">
                         <div class="container align-self-center text-white">
-                            <div class="row mb-4 text-center">
+                            <div class="row mb-3 text-center">
                                 <div class="col-12 col-lg-9 mx-lg-auto">
-                                    <h2 class="h1 mb-0 animated" data-animation="fadeInUp"><strong>LAYANAN PTSP ONLINE</strong></h2>
-                                    <div class="divider mx-auto bg-success animated mt-1 mb-1" data-animation="fadeInUp" data-animation-delay="200"><span></span></div>
-                                    <p class="animated mb-0" data-animation="fadeInUp" data-animation-delay="400">PILIH LAYANAN YANG TERSEDIA</p>
+                                    <h4 class="mb-0 animated" data-animation="fadeInUp"><strong>LOKASI PENGADILAN AGAMA
+                                            AMUNTAI KELAS IB</strong></h4>
+                                    <div class="divider mx-auto bg-white animated mt-1 mb-1" data-animation="fadeInUp"
+                                        data-animation-delay="200"><span></span></div>
                                 </div>
                             </div>
-                            <div class="row">
-
-                                <div class="col-12 col-lg-4 mb-3 text-center">
-                                    <img class="shadow img-fluid img-rounded mb-0 animated" data-animation="fadeInUp" data-animation-delay="600" src="assets/images/layanan_telepon.jpg" alt="">
-                                    <div class="feature-block p-3 bg-success text-black animated" data-animation="fadeInUp" data-animation-delay="600">
-
-                                        <h2 class="mb-0"><strong>PANGGILAN SUARA</strong></h2>
-                                        <p class="h5 mb-2">Layanan Informasi Melalui Telepon</p>
-                                        <a href="tel:05186076767" type="button" class="btn btn-block btn-primary btn-pill mb-0 mr-0">
-                                            <i class="fab fas fa-phone-volume  mr-1"></i> Mulai Panggilan
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <div class="col-12 col-lg-4 mb-3 text-center">
-                                    <img class="shadow img-fluid img-rounded mb-0 animated" data-animation="fadeInUp" data-animation-delay="600" src="assets/images/layanan_zoom.png" alt="">
-                                    <div class="feature-block p-3 bg-success text-black animated" data-animation="fadeInUp" data-animation-delay="600">
-
-                                        <h2 class="mb-0"><strong>PANGGILAN VIDEO</strong></h2>
-                                        <p class="h5 mb-2">Layanan Melalui Aplikasi Zoom.</p>
-                                        <a href="https://us04web.zoom.us/j/7806179096?pwd=GWswh6iDRQETap0eYIY_sjzIGWo7lB.1" target="_blank" type="button" class="btn btn-block btn-primary btn-pill mb-0 mr-0">
-                                            <i class="fab fas fa-video mr-1"></i> Buka Aplikasi Zoom
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <div class="col-12 col-lg-4 mb-3 text-center">
-                                    <img class="shadow img-fluid img-rounded mb-0 animated" data-animation="fadeInUp" data-animation-delay="600" src="assets/images/layanan_chat.jpg" alt="">
-                                    <div class="feature-block p-3 bg-success text-black animated" data-animation="fadeInUp" data-animation-delay="600">
-
-                                        <h2 class="mb-0"><strong>PANGGILAN CHAT</strong></h2>
-                                        <p class="h5 mb-2">Layanan Melalui Aplikasi Chat.</p>
-                                        <a href="https://api.whatsapp.com/send?phone=6281254583679&text=Saya%20ingin%20bertanya%20sesuatu" target="_blank" type="button" class="btn btn-block btn-primary btn-pill mb-0 mr-0">
-                                            <i class="fab fas fa-video mr-1"></i> Buka Aplikasi Chat
-                                        </a>
-
-                                    </div>
-                                </div>
-
-                            </div>
-
+                            <iframe
+                                src="https://www.google.com/maps/place/Pengadilan+Agama+Jakarta+Barat/@-6.1850224,106.7530042,17z/data=!3m1!4b1!4m5!3m4!1s0x2e69f0c266357451:0xe435ae262abb7bea!8m2!3d-6.1850277!4d106.7551929"
+                                width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen=""
+                                aria-hidden="false" tabindex="0" class="animated mt-0"></iframe>
                         </div>
                     </section>
                 </div>
-
                 <div class="site-part" id="contact">
                     <section class="min-vh-100 d-flex">
                         <div class="container align-self-center text-white">
                             <div class="row mb-4 text-center">
                                 <div class="col-12 col-lg-9 mx-lg-auto">
-                                    <h2 class="h1 mb-0 animated" data-animation="fadeInUp"><strong>PETUGAS PTSP PA KOTABARU</strong></h2>
-                                    <div class="divider mx-auto bg-white animated mt-1 mb-1" data-animation="fadeInUp" data-animation-delay="200"><span></span></div>
+                                    <h2 class="h1 mb-0 animated" data-animation="fadeInUp"><strong>PETUGAS PTSP PA
+                                            AMUNTAI</strong></h2>
+                                    <div class="divider mx-auto bg-white animated mt-1 mb-1" data-animation="fadeInUp"
+                                        data-animation-delay="200"><span></span></div>
                                 </div>
                             </div>
                             <div class="row">
 
                                 <div class="col-12 col-lg-3 mb-3 text-center">
-                                    <img class="shadow img-fluid img-rounded mb-0 animated" data-animation="fadeInUp" data-animation-delay="600" src="assets/images/viky1.png" alt="">
-                                    <div class="feature-block p-3 bg-success text-black animated" data-animation="fadeInUp" data-animation-delay="600">
+                                    <img class="shadow img-fluid img-rounded mb-0 animated" data-animation="fadeInUp"
+                                        data-animation-delay="600" src="assets/images/viky1.png" alt="">
+                                    <div class="feature-block p-3 bg-success text-black animated"
+                                        data-animation="fadeInUp" data-animation-delay="600">
 
                                         <h2 class="mb-0"><strong>LAYANAN INFORMASI</strong></h2>
                                         <p class="h5 mb-2">Viky Nur Yunanda, S.H.</p>
                                         <!--<a href="tel:06414811133" type="button" class="btn btn-block btn-primary btn-pill mb-0 mr-0">
-												<i class="fab fas fa-phone-volume  mr-1"></i> Mulai Panggilan
-											</a>-->
+                                            <i class="fab fas fa-phone-volume  mr-1"></i> Mulai Panggilan
+                                        </a>-->
                                     </div>
                                 </div>
 
                                 <div class="col-12 col-lg-3 mb-3 text-center">
-                                    <img class="shadow img-fluid img-rounded mb-0 animated" data-animation="fadeInUp" data-animation-delay="600" src="assets/images/Afifah.jpeg" alt="">
-                                    <div class="feature-block p-3 bg-success text-black animated" data-animation="fadeInUp" data-animation-delay="600">
+                                    <img class="shadow img-fluid img-rounded mb-0 animated" data-animation="fadeInUp"
+                                        data-animation-delay="600" src="assets/images/Afifah.jpeg" alt="">
+                                    <div class="feature-block p-3 bg-success text-black animated"
+                                        data-animation="fadeInUp" data-animation-delay="600">
 
                                         <h2 class="mb-0"><strong>LAYANAN PENDAFTARAN </strong></h2>
                                         <p class="h5 mb-2">Miftakul Afifah, A.Md.A.B.</p>
                                         <!--<a href="https://us05web.zoom.us/j/2731675797?pwd=aGlncUNialhBUk1CKzg3OVQzUzJGUT09#success" target="_blank" type="button" class="btn btn-block btn-primary btn-pill mb-0 mr-0">
-												<i class="fab fas fa-video mr-1"></i> Buka Aplikasi Zoom
-											</a>-->
+                                            <i class="fab fas fa-video mr-1"></i> Buka Aplikasi Zoom
+                                        </a>-->
                                     </div>
                                 </div>
 
                                 <div class="col-12 col-lg-3 mb-3 text-center">
-                                    <img class="shadow img-fluid img-rounded mb-0 animated" data-animation="fadeInUp" data-animation-delay="600" src="assets/images/nurul1.jpg" alt="">
-                                    <div class="feature-block p-3 bg-success text-black animated" data-animation="fadeInUp" data-animation-delay="600">
+                                    <img class="shadow img-fluid img-rounded mb-0 animated" data-animation="fadeInUp"
+                                        data-animation-delay="600" src="assets/images/nurul1.jpg" alt="">
+                                    <div class="feature-block p-3 bg-success text-black animated"
+                                        data-animation="fadeInUp" data-animation-delay="600">
 
                                         <h2 class="mb-0"><strong>LAYANAN PEMBAYARAN</strong></h2>
                                         <p class="h5 mb-2">Nurul Hikmah, S.P.</p>
                                         <!--<a href="https://api.whatsapp.com/send?phone=085215053471&text=Saya%20ingin%20bertanya%20sesuatu" target="_blank" type="button" class="btn btn-block btn-primary btn-pill mb-0 mr-0">
-												<i class="fab fas fa-video mr-1"></i> Klik Untuk Mulai Percakapan
-											</a>-->
+                                            <i class="fab fas fa-video mr-1"></i> Klik Untuk Mulai Percakapan
+                                        </a>-->
                                     </div>
                                 </div>
 
                                 <div class="col-12 col-lg-3 mb-3 text-center">
-                                    <img class="shadow img-fluid img-rounded mb-0 animated" data-animation="fadeInUp" data-animation-delay="600" src="assets/images/pirda1.jpg" alt="">
-                                    <div class="feature-block p-3 bg-success text-black animated" data-animation="fadeInUp" data-animation-delay="600">
+                                    <img class="shadow img-fluid img-rounded mb-0 animated" data-animation="fadeInUp"
+                                        data-animation-delay="600" src="assets/images/pirda1.jpg" alt="">
+                                    <div class="feature-block p-3 bg-success text-black animated"
+                                        data-animation="fadeInUp" data-animation-delay="600">
 
                                         <h2 class="mb-0"><strong>LAYANAN PRODUK</strong></h2>
                                         <p class="h5 mb-2">Pirda Rahimi, S.H.</p>
                                         <!--<a href="https://api.whatsapp.com/send?phone=085215053471&text=Saya%20ingin%20bertanya%20sesuatu" target="_blank" type="button" class="btn btn-block btn-primary btn-pill mb-0 mr-0">
-												<i class="fab fas fa-video mr-1"></i> Klik Untuk Mulai Percakapan
-											</a>-->
+                                            <i class="fab fas fa-video mr-1"></i> Klik Untuk Mulai Percakapan
+                                        </a>-->
                                     </div>
                                 </div>
 
                             </div>
 
-                        </div>
-                    </section>
-                </div>
-                <!-- Portfolio item 12 syarat-->
-                <div class="site-part" id="syarat">
-                    <section class="min-vh-100 d-flex">
-                        <div class="container align-self-center text-white">
-                            <div class="row mb-4 text-center">
-                                <div class="col-12 col-lg-9 mx-lg-auto">
-                                    <h2 class="h1 mb-0 animated" data-animation="fadeInUp"><strong>SYARAT-SYARAT</strong></h2>
-                                    <div class="divider mx-auto bg-white animated mt-1 mb-1" data-animation="fadeInUp" data-animation-delay="200"><span></span></div>
-                                </div>
-                            </div>
-                            <div class="row">
-
-                                <div class="col-12 col-lg-3 mb-3 text-center">
-                                    <img class="shadow img-fluid img-rounded mb-0 animated" data-animation="fadeInUp" data-animation-delay="600" src="assets/images/syarat/ceraigugat.png" alt="">
-                                    <div class="feature-block p-3 bg-success text-black animated" data-animation="fadeInUp" data-animation-delay="600">
-
-                                        <h2 class="mb-0"><strong>CERAI GUGAT</strong></h2>
-                                        <p class="h5 mb-2">cara download : Silahkan Klik kanan pada Komputer anda lalu klik simpan gambar atau buka gambar di tab baru untuk memperbesar gambar</p>
-                                        <!--<a href="tel:06414811133" type="button" class="btn btn-block btn-primary btn-pill mb-0 mr-0">
-												<i class="fab fas fa-phone-volume  mr-1"></i> Mulai Panggilan
-											</a>-->
-                                    </div>
-                                </div>
-
-                                <div class="col-12 col-lg-3 mb-3 text-center">
-                                    <img class="shadow img-fluid img-rounded mb-0 animated" data-animation="fadeInUp" data-animation-delay="600" src="assets/images/syarat/ceraitalak.png" alt="">
-                                    <div class="feature-block p-3 bg-success text-black animated" data-animation="fadeInUp" data-animation-delay="600">
-
-                                        <h2 class="mb-0"><strong>CERAI TALAK</strong></h2>
-                                        <p class="h5 mb-2">cara download : Silahkan Klik kanan pada Komputer anda lalu klik simpan gambar atau buka gambar di tab baru untuk memperbesar gambar</p>
-                                        <!--<a href="tel:06414811133" type="button" class="btn btn-block btn-primary btn-pill mb-0 mr-0">
-												<i class="fab fas fa-phone-volume  mr-1"></i> Mulai Panggilan
-											</a>-->
-                                    </div>
-                                </div>
-
-                                <div class="col-12 col-lg-3 mb-3 text-center">
-                                    <img class="shadow img-fluid img-rounded mb-0 animated" data-animation="fadeInUp" data-animation-delay="600" src="assets/images/syarat/dispensasikawin.png" alt="">
-                                    <div class="feature-block p-3 bg-success text-black animated" data-animation="fadeInUp" data-animation-delay="600">
-
-                                        <h4 class="mb-0"><strong>PENETAPAN DISPENSASI KAWIN</strong></h4>
-                                        <p class="h5 mb-2">cara download : Silahkan Klik kanan pada Komputer anda lalu klik simpan gambar atau buka gambar di tab baru untuk memperbesar gambar</p>
-                                        <!--<a href="tel:06414811133" type="button" class="btn btn-block btn-primary btn-pill mb-0 mr-0">
-												<i class="fab fas fa-phone-volume  mr-1"></i> Mulai Panggilan
-											</a>-->
-                                    </div>
-                                </div>
-
-                                <div class="col-12 col-lg-3 mb-3 text-center">
-                                    <img class="shadow img-fluid img-rounded mb-0 animated" data-animation="fadeInUp" data-animation-delay="600" src="assets/images/syarat/itsbatnikah.png" alt="">
-                                    <div class="feature-block p-3 bg-success text-black animated" data-animation="fadeInUp" data-animation-delay="600">
-
-                                        <h3 class="mb-0"><strong>ITSBAT NIKAH</strong></h3>
-                                        <p class="h5 mb-2">cara download : Silahkan Klik kanan pada Komputer anda lalu klik simpan gambar atau buka gambar di tab baru untuk memperbesar gambar</p>
-                                        <!--<a href="tel:06414811133" type="button" class="btn btn-block btn-primary btn-pill mb-0 mr-0">
-												<i class="fab fas fa-phone-volume  mr-1"></i> Mulai Panggilan
-											</a>-->
-                                    </div>
-                                </div>
-
-                                <div class="col-12 col-lg-3 mb-3 text-center">
-                                    <img class="shadow img-fluid img-rounded mb-0 animated" data-animation="fadeInUp" data-animation-delay="600" src="assets/images/syarat/asalusulanak.png" alt="">
-                                    <div class="feature-block p-3 bg-success text-black animated" data-animation="fadeInUp" data-animation-delay="600">
-
-                                        <h4 class="mb-0"><strong>PENETAPAN ASAL USUL ANAK</strong></h4>
-                                        <p class="h5 mb-2">cara download : Silahkan Klik kanan pada Komputer anda lalu klik simpan gambar atau buka gambar di tab baru untuk memperbesar gambar</p>
-                                        <!--<a href="tel:06414811133" type="button" class="btn btn-block btn-primary btn-pill mb-0 mr-0">
-												<i class="fab fas fa-phone-volume  mr-1"></i> Mulai Panggilan
-											</a>-->
-                                    </div>
-                                </div>
-
-                                <div class="col-12 col-lg-3 mb-3 text-center">
-                                    <img class="shadow img-fluid img-rounded mb-0 animated" data-animation="fadeInUp" data-animation-delay="600" src="assets/images/syarat/izinpoligami.png" alt="">
-                                    <div class="feature-block p-3 bg-success text-black animated" data-animation="fadeInUp" data-animation-delay="600">
-
-                                        <h4 class="mb-0"><strong>PENGAJUAN IZIN POLIGAMI</strong></h4>
-                                        <p class="h5 mb-2">cara download : Silahkan Klik kanan pada Komputer anda lalu klik simpan gambar atau buka gambar di tab baru untuk memperbesar gambar</p>
-                                        <!--<a href="tel:06414811133" type="button" class="btn btn-block btn-primary btn-pill mb-0 mr-0">
-												<i class="fab fas fa-phone-volume  mr-1"></i> Mulai Panggilan
-											</a>-->
-                                    </div>
-                                </div>
-
-                                <div class="col-12 col-lg-3 mb-3 text-center">
-                                    <img class="shadow img-fluid img-rounded mb-0 animated" data-animation="fadeInUp" data-animation-delay="600" src="assets/images/syarat/penetapanwaris.png" alt="">
-                                    <div class="feature-block p-3 bg-success text-black animated" data-animation="fadeInUp" data-animation-delay="600">
-
-                                        <h4 class="mb-0"><strong>PENETAPAN AHLI WARIS</strong></h4>
-                                        <p class="h5 mb-2">cara download : Silahkan Klik kanan pada Komputer anda lalu klik simpan gambar atau buka gambar di tab baru untuk memperbesar gambar</p>
-                                        <!--<a href="tel:06414811133" type="button" class="btn btn-block btn-primary btn-pill mb-0 mr-0">
-												<i class="fab fas fa-phone-volume  mr-1"></i> Mulai Panggilan
-											</a>-->
-                                    </div>
-                                </div>
-
-                                <div class="col-12 col-lg-3 mb-3 text-center">
-                                    <img class="shadow img-fluid img-rounded mb-0 animated" data-animation="fadeInUp" data-animation-delay="600" src="assets/images/syarat/pengangkatananak.png" alt="">
-                                    <div class="feature-block p-3 bg-success text-black animated" data-animation="fadeInUp" data-animation-delay="600">
-
-                                        <h4 class="mb-0"><strong>PENGANGKATAN ANAK</strong></h4>
-                                        <p class="h5 mb-2">cara download : Silahkan Klik kanan pada Komputer anda lalu klik simpan gambar atau buka gambar di tab baru untuk memperbesar gambar</p>
-                                        <!--<a href="tel:06414811133" type="button" class="btn btn-block btn-primary btn-pill mb-0 mr-0">
-												<i class="fab fas fa-phone-volume  mr-1"></i> Mulai Panggilan
-											</a>-->
-                                    </div>
-                                </div>
-
-                            </div>
                         </div>
                     </section>
                 </div>
