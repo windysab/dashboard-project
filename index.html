@@ -21,8 +21,8 @@
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"  -->
     <link rel="stylesheet" href="assets/css/all.min.css">
     <link rel="stylesheet" href="assets/css/fontawesome/all.min.css">
-    
-    
+
+
     <style>
         #home,
         #lokasi {
@@ -387,6 +387,42 @@
             });
         });
 
+        // $('#modTel').on('submit', function (event) {
+        //     event.preventDefault();
+        //     var nama = $('#nama').val();
+        //     var nope = $('#nope').val();
+        //     var layanan = $('#layanan').val();
+        //     var satker = $('#satker').val();
+        //     $.ajax({
+        //         url: 'savePengguna.php',
+        //         type: 'POST',
+        //         dataType: 'json',
+        //         data: {
+        //             nama: nama,  
+        //             nope: nope,
+        //             layanan: layanan,
+        //             satker: satker
+        //         },
+        //     })
+        //         .done(function (data) {
+        //             if (data > 0) {
+        //                 $('#modal').modal("hide");
+
+        //                 if (layanan == 'telepon') {
+        //                     window.location = "tel:(021)58352092"
+        //                 } else if (layanan == 'zoom') {
+        //                     window.location = "https://us06web.zoom.us/j/9681050045?pwd=vd3IpbiZt54B6GPIsGEMzSmvot8fuN.1"
+        //                 }
+        //             }
+        //         })
+        //         .fail(function () {
+        //             console.log("error");
+        //         })
+        //         .always(function () {
+        //             console.log("complete");
+        //         });
+        // });
+
         $('#modTel').on('submit', function (event) {
             event.preventDefault();
             var nama = $('#nama').val();
@@ -394,7 +430,7 @@
             var layanan = $('#layanan').val();
             var satker = $('#satker').val();
             $.ajax({
-                url: 'https://ptsp.pta-jakarta.go.id/dashboard/savePengguna',
+                url: 'savePengguna.php',
                 type: 'POST',
                 dataType: 'json',
                 data: {
@@ -405,7 +441,7 @@
                 },
             })
                 .done(function (data) {
-                    if (data > 0) {
+                    if (data.success && data.data > 0) {
                         $('#modal').modal("hide");
 
                         if (layanan == 'telepon') {
@@ -413,6 +449,8 @@
                         } else if (layanan == 'zoom') {
                             window.location = "https://us06web.zoom.us/j/9681050045?pwd=vd3IpbiZt54B6GPIsGEMzSmvot8fuN.1"
                         }
+                    } else {
+                        console.log("Error: " + data.message);
                     }
                 })
                 .fail(function () {
