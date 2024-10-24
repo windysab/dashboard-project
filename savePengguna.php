@@ -1,5 +1,3 @@
-
-
 <?php
 // savePengguna.php
 
@@ -10,6 +8,7 @@ $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "your_database_name";
+
 // Membuat koneksi
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -18,11 +17,16 @@ if ($conn->connect_error) {
     die(json_encode(['success' => false, 'message' => 'Connection failed: ' . $conn->connect_error]));
 }
 
-// Mengambil data POST
-$nama = $_POST['nama'];
-$nope = $_POST['nope'];
-$layanan = $_POST['layanan'];
-$satker = $_POST['satker'];
+// Fungsi untuk membersihkan input
+function sanitize_input($data) {
+    return htmlspecialchars(strip_tags(trim($data)));
+}
+
+// Mengambil dan membersihkan data POST
+$nama = sanitize_input($_POST['nama']);
+$nope = sanitize_input($_POST['nope']);
+$layanan = sanitize_input($_POST['layanan']);
+$satker = sanitize_input($_POST['satker']);
 
 // Menyiapkan dan mengikat
 $stmt = $conn->prepare("INSERT INTO pengguna (nama, nope, layanan, satker) VALUES (?, ?, ?, ?)");

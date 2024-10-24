@@ -423,43 +423,54 @@
         //         });
         // });
 
-        $('#modTel').on('submit', function (event) {
-            event.preventDefault();
-            var nama = $('#nama').val();
-            var nope = $('#nope').val();
-            var layanan = $('#layanan').val();
-            var satker = $('#satker').val();
-            $.ajax({
-                url: 'savePengguna.php',
-                type: 'POST',
-                dataType: 'json',
-                data: {
-                    nama: nama,
-                    nope: nope,
-                    layanan: layanan,
-                    satker: satker
-                },
-            })
-                .done(function (data) {
-                    if (data.success && data.data > 0) {
-                        $('#modal').modal("hide");
 
-                        if (layanan == 'telepon') {
-                            window.location = "tel:(021)58352092"
-                        } else if (layanan == 'zoom') {
-                            window.location = "https://us06web.zoom.us/j/9681050045?pwd=vd3IpbiZt54B6GPIsGEMzSmvot8fuN.1"
+        $(document).ready(function () {
+            $('#modTel').on('submit', function (event) {
+                event.preventDefault();
+                var nama = $('#nama').val().trim();
+                var nope = $('#nope').val().trim();
+                var layanan = $('#layanan').val().trim();
+                var satker = $('#satker').val().trim();
+
+                // Validasi dasar
+                if (nama === "" || nope === "" || layanan === "" || satker === "") {
+                    alert("Semua field harus diisi!");
+                    return;
+                }
+
+                $.ajax({
+                    url: 'savePengguna.php',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {
+                        nama: nama,
+                        nope: nope,
+                        layanan: layanan,
+                        satker: satker
+                    },
+                })
+                    .done(function (data) {
+                        if (data.success && data.data > 0) {
+                            $('#modal').modal("hide");
+
+                            if (layanan == 'telepon') {
+                                window.location = "tel:(021)58352092"
+                            } else if (layanan == 'zoom') {
+                                window.location = "https://us06web.zoom.us/j/9681050045?pwd=vd3IpbiZt54B6GPIsGEMzSmvot8fuN.1"
+                            }
+                        } else {
+                            console.log("Error: " + data.message);
                         }
-                    } else {
-                        console.log("Error: " + data.message);
-                    }
-                })
-                .fail(function () {
-                    console.log("error");
-                })
-                .always(function () {
-                    console.log("complete");
-                });
+                    })
+                    .fail(function () {
+                        console.log("error");
+                    })
+                    .always(function () {
+                        console.log("complete");
+                    });
+            });
         });
+
     </script>
     <script type='text/javascript'>
         var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
