@@ -1,0 +1,7 @@
+CREATE TABLE pengguna (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nama VARCHAR(255) NOT NULL,
+    nope VARCHAR(255) NOT NULL,
+    layanan VARCHAR(255) NOT NULL,
+    satker VARCHAR(255) NOT NULL
+);
