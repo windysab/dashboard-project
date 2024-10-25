@@ -3,34 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Register</title>
 </head>
 <body>
-    <form id="login-form" method="POST">
+    <form id="register-form" method="POST">
         <label for="username">Username:</label>
         <input type="text" id="username" name="username" required>
         <br>
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" required>
         <br>
-        <button type="submit">Login</button>
+        <button type="submit">Register</button>
     </form>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function() {
-            $('#login-form').on('submit', function(e) {
+            $('#register-form').on('submit', function(e) {
                 e.preventDefault();
 
                 $.ajax({
-                    url: 'login.php',
+                    url: 'register.php',
                     method: 'POST',
                     data: $(this).serialize(),
                     success: function(response) {
                         console.log(response); // Tambahkan logging di sini
                         if (response.success) {
                             alert(response.message);
-                            window.location.href = 'chat.php'; // Redirect ke halaman chat
+                            window.location.href = 'login.html'; // Redirect ke halaman login
                         } else {
                             alert(response.message);
                         }
