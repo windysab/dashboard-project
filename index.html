@@ -132,6 +132,7 @@
             cursor: pointer;
         }
     </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body class="slideshow-background">
@@ -273,13 +274,7 @@
                                     </div>
                                 </div>
 
-                                <div id="chat-box" style="display:none;">
-                                    <div id="messages"></div>
-                                    <input type="text" id="username" placeholder="Nama">
-                                    <textarea id="message" placeholder="Pesan"></textarea>
-                                    <button id="send-message">Kirim</button>
-                                </div>
-
+                                
                             </div>
 
                         </div>
@@ -375,6 +370,14 @@
             </div>
         </div>
     </main>
+
+    <div id="chat-box" style="display:none; border: 1px solid red;">
+        <div id="messages"></div>
+        <input type="text" id="username" placeholder="Nama">
+        <textarea id="message" placeholder="Pesan"></textarea>
+        <button id="send-message">Kirim</button>
+    </div>
+
 
     <div id="modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -592,7 +595,7 @@
         updateVisitorCount();
     </script>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
     <script>
         $(document).ready(function () {
             function fetchMessages() {
@@ -614,7 +617,7 @@
 
             $('#start-chat').on('click', function () {
                 console.log("Tombol klik terdeteksi"); // Log sebelum pemanggilan fungsi
-                $('#chat-box').show();
+                $('#chat-box').css('display', 'block'); // Tambahkan gaya sementara
                 console.log("Fungsi $('#chat-box').show(); dijalankan"); // Log setelah pemanggilan fungsi
             });
 
