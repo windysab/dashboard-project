@@ -77,6 +77,60 @@
                 font-size: 12px;
             }
         }
+
+        #chat-box {
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 300px;
+            height: 400px;
+            overflow-y: scroll;
+            background-color: #f9f9f9;
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            display: none;
+            z-index: 1000;
+            /* Tambahkan z-index */
+        }
+
+        #messages {
+            height: 300px;
+            overflow-y: scroll;
+            margin-bottom: 10px;
+        }
+
+        .message {
+            padding: 5px;
+            margin-bottom: 5px;
+            border-radius: 5px;
+        }
+
+        .message.user {
+            background-color: #d1e7dd;
+            text-align: left;
+        }
+
+        .message.admin {
+            background-color: #f8d7da;
+            text-align: right;
+        }
+
+        #username,
+        #message {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+
+        #send-message {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -221,9 +275,9 @@
 
                                 <div id="chat-box" style="display:none;">
                                     <div id="messages"></div>
-                                    <input type="text" id="username" placeholder="Nama" style="display:none;">
-                                    <textarea id="message" placeholder="Pesan" style="display:none;"></textarea>
-                                    <button id="send-message" style="display:none;">Kirim</button>
+                                    <input type="text" id="username" placeholder="Nama">
+                                    <textarea id="message" placeholder="Pesan"></textarea>
+                                    <button id="send-message">Kirim</button>
                                 </div>
 
                             </div>
@@ -538,6 +592,7 @@
         updateVisitorCount();
     </script>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function () {
             function fetchMessages() {
@@ -549,17 +604,18 @@
                         var chatBox = $('#messages');
                         chatBox.html('');
                         messages.forEach(function (message) {
-                            chatBox.append('<div class="message"><strong>' + message.username + ':</strong> ' + message.message + ' <em>(' + message.timestamp + ')</em></div>');
+                            var messageClass = message.username === 'admin' ? 'admin' : 'user';
+                            chatBox.append('<div class="message ' + messageClass + '"><strong>' + message.username + ':</strong> ' + message.message + ' <em>(' + message.timestamp + ')</em></div>');
                         });
+                        chatBox.scrollTop(chatBox[0].scrollHeight);
                     }
                 });
             }
 
             $('#start-chat').on('click', function () {
+                console.log("Tombol klik terdeteksi"); // Log sebelum pemanggilan fungsi
                 $('#chat-box').show();
-                $('#username').show();
-                $('#message').show();
-                $('#send-message').show();
+                console.log("Fungsi $('#chat-box').show(); dijalankan"); // Log setelah pemanggilan fungsi
             });
 
             $('#send-message').on('click', function () {
@@ -580,7 +636,6 @@
             setInterval(fetchMessages, 5000); // Mengambil pesan baru setiap 5 detik
         });
     </script>
-
 
 </body>
 
