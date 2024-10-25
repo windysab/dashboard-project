@@ -212,12 +212,20 @@
                                         data-animation="fadeInUp" data-animation-delay="600">
                                         <h2 class="mb-0"><strong>Online Chat</strong></h2>
                                         <p class="h5 mb-2">Layanan Informasi Melalui Chat.</p>
-                                        <button type="button" class="btn btn-block btn-primary btn-pill mb-0 mr-0">
-                                            <i class="fas fa-envelope mr-1"></i> Klik Mulai
-                                            Percakapan/Kirim Pesan
+                                        <button type="button" class="btn btn-block btn-primary btn-pill mb-0 mr-0"
+                                            id="startChat">
+                                            <i class="fas fa-envelope mr-1"></i> Klik Mulai Percakapan/Kirim Pesan
                                         </button>
                                     </div>
                                 </div>
+                                <div id="chatWindow" class="chat-window" style="display:none;">
+                                    <div id="chatMessages" class="chat-messages"></div>
+                                    <input type="text" id="chatUser" class="form-control mb-2 chat-input" placeholder="Your Name">
+                                    <textarea id="chatMessage" class="form-control mb-2 chat-input" placeholder="Type your message"></textarea>
+                                    <button id="sendMessage" class="btn btn-primary chat-send-button">Send</button>
+                                </div>
+
+
                             </div>
 
                         </div>
@@ -290,7 +298,9 @@
                                         data-animation="fadeInUp" data-animation-delay="600">
                                         <h4 class="mb-0"><strong>LAYANAN PRODUK</strong></h4>
                                         <p class="h6 mb-2">Yuli Herlina, S.H</p>
-                                        <a href="https://api.whatsapp.com/send?phone=6282149151132&text=syarat2%20untuk%20pengambilan%20akta%20cerai%2F%20salinan%20putusan" target="_blank" type="button" class="btn btn-block btn-primary btn-pill mb-0 mr-0">
+                                        <a href="https://api.whatsapp.com/send?phone=6282149151132&text=syarat2%20untuk%20pengambilan%20akta%20cerai%2F%20salinan%20putusan"
+                                            target="_blank" type="button"
+                                            class="btn btn-block btn-primary btn-pill mb-0 mr-0">
                                             <i class="fas fa-video mr-1"></i> Klik Untuk Mulai Percakapan
                                         </a>
                                     </div>
@@ -311,6 +321,13 @@
             </div>
         </div>
     </main>
+
+    <div id="chatWindow" class="chat-window" style="display:none;">
+        <div id="chatMessages" class="chat-messages"></div>
+        <input type="text" id="chatUser" class="form-control mb-2 chat-input" placeholder="Your Name">
+        <textarea id="chatMessage" class="form-control mb-2 chat-input" placeholder="Type your message"></textarea>
+        <button id="sendMessage" class="btn btn-primary chat-send-button">Send</button>
+    </div>
 
     <div id="modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -477,7 +494,7 @@
         });
 
     </script>
-    <script type='text/javascript'>
+    <!-- <script type='text/javascript'>
         var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
         (function () {
             var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
@@ -487,7 +504,7 @@
             s1.setAttribute("crossorigin", "*");
             s0.parentNode.insertBefore(s1, s0);
         })();            
-    </script>
+    </script> -->
 
     <script>
         function updateVisitorCount() {
@@ -526,6 +543,48 @@
         }
 
         updateVisitorCount();
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('#startChat').click(function () {
+                $('#chatWindow').toggle();
+                console.log('Chat window toggled');
+            });
+
+            $('#sendMessage').click(function () {
+                var user = $('#chatUser').val();
+                var message = $('#chatMessage').val();
+
+                if (user && message) {
+                    $.post('save_message.php', { user: user, message: message }, function (response) {
+                        console.log('Message sent:', response);
+                        $('#chatMessage').val('');
+                        loadMessages();
+                    }).fail(function () {
+                        console.error('Error sending message');
+                    });
+                } else {
+                    alert('Please enter both name and message');
+                }
+            });
+
+            function loadMessages() {
+                $.get('get_messages.php', function (data) {
+                    console.log('Data received:', data); // Log data received
+                    var messages = JSON.parse(data);
+                    var chatMessages = '';
+                    for (var i = 0; i < messages.length; i++) {
+                        chatMessages += '<p><strong>' + messages[i].user + ':</strong> ' + messages[i].message + '</p>';
+                    }
+                    $('#chatMessages').html(chatMessages);
+                    console.log('Messages loaded');
+                }).fail(function () {
+                    console.error('Error loading messages');
+                });
+            }
+
+            setInterval(loadMessages, 3000);
+        });
     </script>
 
 
