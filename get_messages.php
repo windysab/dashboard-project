@@ -10,7 +10,8 @@ if ($conn->connect_error) {
     die("Koneksi gagal: " . $conn->connect_error);
 }
 
-$sql = "SELECT username, message, timestamp FROM messages ORDER BY timestamp DESC";
+$recipient = $_GET['recipient'];
+$sql = "SELECT username, message, timestamp FROM messages WHERE recipient='$recipient' ORDER BY timestamp DESC";
 $result = $conn->query($sql);
 
 $messages = array();

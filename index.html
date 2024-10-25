@@ -274,7 +274,7 @@
                                     </div>
                                 </div>
 
-                                
+
                             </div>
 
                         </div>
@@ -595,13 +595,15 @@
         updateVisitorCount();
     </script>
 
-    
+
     <script>
         $(document).ready(function () {
             function fetchMessages() {
+                var recipient = localStorage.getItem('username');
                 $.ajax({
                     url: 'get_messages.php',
                     method: 'GET',
+                    data: { recipient: recipient },
                     success: function (data) {
                         var messages = JSON.parse(data);
                         var chatBox = $('#messages');
@@ -616,18 +618,17 @@
             }
 
             $('#start-chat').on('click', function () {
-                console.log("Tombol klik terdeteksi"); // Log sebelum pemanggilan fungsi
-                $('#chat-box').css('display', 'block'); // Tambahkan gaya sementara
-                console.log("Fungsi $('#chat-box').show(); dijalankan"); // Log setelah pemanggilan fungsi
+                $('#chat-box').css('display', 'block');
             });
 
             $('#send-message').on('click', function () {
-                var username = $('#username').val();
+                var username = localStorage.getItem('username');
                 var message = $('#message').val();
+                var recipient = username; // Set recipient to the current user
                 $.ajax({
                     url: 'send_message.php',
                     method: 'POST',
-                    data: { username: username, message: message },
+                    data: { username: username, message: message, recipient: recipient },
                     success: function (response) {
                         $('#message').val('');
                         fetchMessages();
@@ -635,11 +636,16 @@
                 });
             });
 
+            // Set a unique username for the session
+            if (!localStorage.getItem('username')) {
+                var username = prompt("Masukkan nama pengguna Anda:");
+                localStorage.setItem('username', username);
+            }
+
             fetchMessages();
             setInterval(fetchMessages, 5000); // Mengambil pesan baru setiap 5 detik
         });
     </script>
-
 </body>
 
 </html>

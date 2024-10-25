@@ -13,8 +13,9 @@ if ($conn->connect_error) {
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];
     $message = $_POST['message'];
+    $recipient = $_POST['recipient'];
 
-    $sql = "INSERT INTO messages (username, message) VALUES ('$username', '$message')";
+    $sql = "INSERT INTO messages (username, message, recipient) VALUES ('$username', '$message', '$recipient')";
     if ($conn->query($sql) === TRUE) {
         echo "Pesan berhasil dikirim";
     } else {
