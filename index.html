@@ -212,12 +212,20 @@
                                         data-animation="fadeInUp" data-animation-delay="600">
                                         <h2 class="mb-0"><strong>Online Chat</strong></h2>
                                         <p class="h5 mb-2">Layanan Informasi Melalui Chat.</p>
-                                        <button type="button" class="btn btn-block btn-primary btn-pill mb-0 mr-0">
-                                            <i class="fas fa-envelope mr-1"></i> Klik Mulai
-                                            Percakapan/Kirim Pesan
+                                        <button type="button" class="btn btn-block btn-primary btn-pill mb-0 mr-0"
+                                            id="start-chat">
+                                            <i class="fas fa-envelope mr-1"></i> Klik Mulai Percakapan/Kirim Pesan
                                         </button>
                                     </div>
                                 </div>
+
+                                <div id="chat-box" style="display:none;">
+                                    <div id="messages"></div>
+                                    <input type="text" id="username" placeholder="Nama" style="display:none;">
+                                    <textarea id="message" placeholder="Pesan" style="display:none;"></textarea>
+                                    <button id="send-message" style="display:none;">Kirim</button>
+                                </div>
+
                             </div>
 
                         </div>
@@ -290,7 +298,9 @@
                                         data-animation="fadeInUp" data-animation-delay="600">
                                         <h4 class="mb-0"><strong>LAYANAN PRODUK</strong></h4>
                                         <p class="h6 mb-2">Yuli Herlina, S.H</p>
-                                        <a href="https://api.whatsapp.com/send?phone=6282149151132&text=syarat2%20untuk%20pengambilan%20akta%20cerai%2F%20salinan%20putusan" target="_blank" type="button" class="btn btn-block btn-primary btn-pill mb-0 mr-0">
+                                        <a href="https://api.whatsapp.com/send?phone=6282149151132&text=syarat2%20untuk%20pengambilan%20akta%20cerai%2F%20salinan%20putusan"
+                                            target="_blank" type="button"
+                                            class="btn btn-block btn-primary btn-pill mb-0 mr-0">
                                             <i class="fas fa-video mr-1"></i> Klik Untuk Mulai Percakapan
                                         </a>
                                     </div>
@@ -526,6 +536,49 @@
         }
 
         updateVisitorCount();
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            function fetchMessages() {
+                $.ajax({
+                    url: 'get_messages.php',
+                    method: 'GET',
+                    success: function (data) {
+                        var messages = JSON.parse(data);
+                        var chatBox = $('#messages');
+                        chatBox.html('');
+                        messages.forEach(function (message) {
+                            chatBox.append('<div class="message"><strong>' + message.username + ':</strong> ' + message.message + ' <em>(' + message.timestamp + ')</em></div>');
+                        });
+                    }
+                });
+            }
+
+            $('#start-chat').on('click', function () {
+                $('#chat-box').show();
+                $('#username').show();
+                $('#message').show();
+                $('#send-message').show();
+            });
+
+            $('#send-message').on('click', function () {
+                var username = $('#username').val();
+                var message = $('#message').val();
+                $.ajax({
+                    url: 'send_message.php',
+                    method: 'POST',
+                    data: { username: username, message: message },
+                    success: function (response) {
+                        $('#message').val('');
+                        fetchMessages();
+                    }
+                });
+            });
+
+            fetchMessages();
+            setInterval(fetchMessages, 5000); // Mengambil pesan baru setiap 5 detik
+        });
     </script>
 
 
