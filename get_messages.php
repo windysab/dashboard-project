@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -10,8 +12,8 @@ if ($conn->connect_error) {
     die("Koneksi gagal: " . $conn->connect_error);
 }
 
-$recipient = $_GET['recipient'];
-$sql = "SELECT username, message, timestamp FROM messages WHERE recipient='$recipient' ORDER BY timestamp DESC";
+$recipient = $_SESSION['username'];
+$sql = "SELECT username, message, timestamp FROM messages WHERE recipient='$recipient' OR recipient='admin' ORDER BY timestamp DESC";
 $result = $conn->query($sql);
 
 $messages = array();

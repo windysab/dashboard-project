@@ -371,9 +371,16 @@
         </div>
     </main>
 
-    <div id="chat-box" style="display:none; border: 1px solid red;">
+    <div id="chat-box" style="display:none;">
         <div id="messages"></div>
-        <input type="text" id="username" placeholder="Nama">
+        <input type="text" id="recipient" placeholder="Penerima">
+        <textarea id="message" placeholder="Pesan"></textarea>
+        <button id="send-message">Kirim</button>
+    </div>
+    
+    <div id="admin-chat-box" style="display:none;">
+        <div id="messages"></div>
+        <input type="text" id="recipient" placeholder="Penerima">
         <textarea id="message" placeholder="Pesan"></textarea>
         <button id="send-message">Kirim</button>
     </div>
@@ -599,11 +606,9 @@
     <script>
         $(document).ready(function () {
             function fetchMessages() {
-                var recipient = localStorage.getItem('username');
                 $.ajax({
                     url: 'get_messages.php',
                     method: 'GET',
-                    data: { recipient: recipient },
                     success: function (data) {
                         var messages = JSON.parse(data);
                         var chatBox = $('#messages');
@@ -622,13 +627,12 @@
             });
 
             $('#send-message').on('click', function () {
-                var username = localStorage.getItem('username');
                 var message = $('#message').val();
-                var recipient = username; // Set recipient to the current user
+                var recipient = $('#recipient').val();
                 $.ajax({
                     url: 'send_message.php',
                     method: 'POST',
-                    data: { username: username, message: message, recipient: recipient },
+                    data: { message: message, recipient: recipient },
                     success: function (response) {
                         $('#message').val('');
                         fetchMessages();
@@ -636,11 +640,17 @@
                 });
             });
 
-            // Set a unique username for the session
-            if (!localStorage.getItem('username')) {
-                var username = prompt("Masukkan nama pengguna Anda:");
-                localStorage.setItem('username', username);
-            }
+            // Check user role and display admin chat box if user is admin
+            $.ajax({
+                url: 'check_role.php',
+                method: 'GET',
+                success: function (data) {
+                    var role = data.role;
+                    if (role === 'admin') {
+                        $('#admin-chat-box').css('display', 'block');
+                    }
+                }
+            });
 
             fetchMessages();
             setInterval(fetchMessages, 5000); // Mengambil pesan baru setiap 5 detik
