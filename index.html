@@ -175,7 +175,7 @@
                             </div>
 
                             <div class="row">
-                                <div class="col-12 col-lg-4 mb-3 text-center">
+                                <!-- <div class="col-12 col-lg-4 mb-3 text-center">
                                     <img class="shadow img-fluid img-rounded mb-0 animated" data-animation="fadeInUp"
                                         data-animation-delay="600" src="assets/images/layanan_telepon.jpg"
                                         alt="Layanan Telepon">
@@ -185,6 +185,22 @@
                                         <p class="h5 mb-2">Layanan Informasi Melalui Telepon.</p>
                                         <button type="button" layanan="telepon"
                                             class="view btn btn-block btn-primary btn-pill mb-0 mr-0">
+                                            <i class="fas fa-phone mr-1"></i> 0527 - 61002
+                                        </button>
+                                    </div>
+                                </div> -->
+
+                                <div class="col-12 col-lg-4 mb-3 text-center">
+                                    <img class="shadow img-fluid img-rounded mb-0 animated" data-animation="fadeInUp"
+                                        data-animation-delay="600" src="assets/images/layanan_telepon.jpg"
+                                        alt="Layanan Telepon">
+                                    <div class="feature-block p-3 bg-white text-black animated"
+                                        data-animation="fadeInUp" data-animation-delay="600">
+                                        <h2 class="mb-0"><strong>Voice Call</strong></h2>
+                                        <p class="h5 mb-2">Layanan Informasi Melalui Telepon.</p>
+                                        <button type="button" layanan="telepon"
+                                            class="view btn btn-block btn-primary btn-pill mb-0 mr-0"
+                                            id="voiceCallButton">
                                             <i class="fas fa-phone mr-1"></i> 0527 - 61002
                                         </button>
                                     </div>
@@ -481,7 +497,7 @@
                             $('#modal').modal("hide");
 
                             if (layanan == 'telepon') {
-                                window.location = "tel:(021)58352092"
+                                window.location = "tel:(0527)61002"
                             } else if (layanan == 'zoom') {
                                 window.location = "https://us06web.zoom.us/j/9681050045?pwd=vd3IpbiZt54B6GPIsGEMzSmvot8fuN.1"
                             }
@@ -548,6 +564,23 @@
         }
 
         updateVisitorCount();
+    </script>
+
+    <script>
+        function isMobileDevice() {
+            return /Mobi|Android/i.test(navigator.userAgent);
+        }
+
+        document.getElementById('voiceCallButton').addEventListener('click', function () {
+            if (!isMobileDevice()) {
+                alert('Layanan ini hanya tersedia di perangkat mobile.');
+            } else {
+                // Lanjutkan dengan fungsionalitas yang ada
+                var layanan = this.getAttribute("layanan");
+                document.getElementById('layanan').value = layanan;
+                $('#modal').modal("show");
+            }
+        });
     </script>
 
 
