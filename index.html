@@ -398,6 +398,7 @@
     <script src="assets/js/jquery.mb.YTPlayer.min.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/modernizr-custom.js"></script>
+    
 
     <script>
         $(document).ready(function () {
@@ -566,7 +567,7 @@
         updateVisitorCount();
     </script>
 
-    <script>
+    <!-- <script>
         function isMobileDevice() {
             return /Mobi|Android/i.test(navigator.userAgent);
         }
@@ -581,8 +582,54 @@
                 $('#modal').modal("show");
             }
         });
+    </script> -->
+
+    <!-- <script>
+        function isMobileDevice() {
+            return /Mobi|Android/i.test(navigator.userAgent);
+        }
+    
+        document.getElementById('voiceCallButton').addEventListener('click', function () {
+            console.log('Button clicked'); // Log untuk debugging
+            if (!isMobileDevice()) {
+                alert('Layanan ini hanya tersedia di perangkat mobile.');
+                console.log('Not a mobile device'); // Log untuk debugging
+                return; // Menghentikan eksekusi lebih awal
+            } else {
+                console.log('Mobile device detected'); // Log untuk debugging
+                // Lanjutkan dengan fungsionalitas yang ada
+                var layanan = this.getAttribute("layanan");
+                document.getElementById('layanan').value = layanan;
+                $('#modal').modal("show");
+            }
+        });
+    </script> -->
+    <script>
+        function isMobileDevice() {
+            return /Mobi|Android/i.test(navigator.userAgent);
+        }
     </script>
 
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+    <script>  
+        $(document).ready(function () {
+            $('#voiceCallButton').on('click', function () {
+                if (!isMobileDevice()) {
+                    alert('Layanan ini hanya tersedia di perangkat mobile.');
+                    return; // Menghentikan eksekusi lebih awal
+                } else {
+                    var layanan = $(this).attr("layanan");
+                    $('#layanan').val(layanan);
+                    $('#modal').modal("show");
+                }
+            });
+        });
+
+        function isMobileDevice() {
+            return /Mobi|Android/i.test(navigator.userAgent);
+        }
+    </script>
+    
 
 </body>
 
