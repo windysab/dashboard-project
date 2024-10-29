@@ -4,11 +4,12 @@ require 'vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
-$servername = getenv('DB_HOST');
-$username = getenv('DB_USERNAME');
-$password = getenv('DB_PASSWORD');
-$dbname = getenv('DB_DATABASE');
-$port = getenv('DB_PORT');
+$servername = '127.0.0.1';
+$username = 'u520364085_chart';
+$password = 'Kadatahu123db';
+$dbname = 'u520364085_chart';
+$port = 3306;
+
 
 // Debugging: Log environment variables (remove this in production)
 error_log("DB_HOST: $servername, DB_USERNAME: $username, DB_DATABASE: $dbname, DB_PORT: $port");
