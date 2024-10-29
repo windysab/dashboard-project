@@ -141,6 +141,9 @@
                                             PINTU (PTSP) ONLINE</strong></h1>
                                     <h3 class="text-white mb-0 animated" data-animation="fadeInUp"><strong>PENGADILAN
                                             AGAMA AMUNTAI KELAS IB</strong></h3>
+                                    <h5 class="text-white mt-0 mb-0 animated" data-animation="fadeInUp"><strong>Jl. Empu
+                                            Mandastana No.10, Sungai Malang, Kec. Amuntai Tengah, Kabupaten Hulu Sungai
+                                            Utara, Provinsi Kalimantan Selatan</strong></h5>
 
                                     <p class="lead text-white mb-3 animated" data-animation="fadeInUp"
                                         data-animation-delay="200">Layanan Informasi Secara Online</p>
@@ -228,12 +231,14 @@
                                         data-animation="fadeInUp" data-animation-delay="600">
                                         <h2 class="mb-0"><strong>Online Chat</strong></h2>
                                         <p class="h5 mb-2">Layanan Informasi Melalui Chat.</p>
-                                        <button type="button" class="btn btn-block btn-primary btn-pill mb-0 mr-0">
+                                        <button type="button" layanan="chat"
+                                            class="btn btn-block btn-primary btn-pill mb-0 mr-0 view">
                                             <i class="fas fa-envelope mr-1"></i> Klik Mulai
                                             Percakapan/Kirim Pesan
                                         </button>
                                     </div>
                                 </div>
+
                             </div>
 
                         </div>
@@ -398,7 +403,7 @@
     <script src="assets/js/jquery.mb.YTPlayer.min.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/modernizr-custom.js"></script>
-    
+
 
     <script>
         $(document).ready(function () {
@@ -468,7 +473,14 @@
         // });
 
 
+
         $(document).ready(function () {
+            $('.view').click(function () {
+                var layanan = $(this).attr("layanan");
+                $('#layanan').val(layanan);
+                $('#modal').modal("show");
+            });
+
             $('#modTel').on('submit', function (event) {
                 event.preventDefault();
                 var nama = $('#nama').val().trim();
@@ -501,6 +513,8 @@
                                 window.location = "tel:(0527)61002"
                             } else if (layanan == 'zoom') {
                                 window.location = "https://us06web.zoom.us/j/9681050045?pwd=vd3IpbiZt54B6GPIsGEMzSmvot8fuN.1"
+                            } else {
+                                window.location = "https://wa.me/6282149151132"
                             }
                         } else {
                             console.log("Error: " + data.message);
@@ -514,6 +528,7 @@
                     });
             });
         });
+
 
     </script>
     <script type='text/javascript'>
@@ -611,7 +626,7 @@
     </script>
 
     <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
-    <script>  
+    <script>
         $(document).ready(function () {
             $('#voiceCallButton').on('click', function () {
                 if (!isMobileDevice()) {
@@ -629,7 +644,7 @@
             return /Mobi|Android/i.test(navigator.userAgent);
         }
     </script>
-    
+
 
 </body>
 
