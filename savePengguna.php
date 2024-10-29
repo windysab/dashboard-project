@@ -19,7 +19,7 @@ $conn = new mysqli($servername, $username, $password, $dbname, $port);
 // Check connection
 if ($conn->connect_error) {
     error_log('Connection failed: ' . $conn->connect_error);
-    die(json_encode(['success' => false, 'message' => 'Connection failed']));
+    die(json_encode(['success' => false, 'message' => 'Connection failed: ' . $conn->connect_error]));
 }
 
 // Function to sanitize input
