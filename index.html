@@ -484,9 +484,16 @@
         updateVisitorCount();
     </script>
     <script>
-        function isMobileDevice() {
-            return /Mobi|Android/i.test(navigator.userAgent);
+        function getVisitorCount() {
+            const url = 'https://api.countapi.xyz/hit/ptsp-amuntai/visits';
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('totalCount').innerText = data.value;
+                });
         }
+
+        getVisitorCount();
     </script>
     
 </body>
