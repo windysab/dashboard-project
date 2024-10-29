@@ -5,18 +5,12 @@ require 'vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
-// Check if environment variables are loaded
-if (!getenv('DB_HOST') || !getenv('DB_USERNAME') || !getenv('DB_PASSWORD') || !getenv('DB_DATABASE') || !getenv('DB_PORT')) {
-    error_log('Environment variables not loaded correctly');
-    die(json_encode(['success' => false, 'message' => 'Environment variables not loaded correctly']));
-}
-
 // Get database credentials from environment variables
-$servername = getenv('DB_HOST');
-$username = getenv('DB_USERNAME');
-$password = getenv('DB_PASSWORD');
-$dbname = getenv('DB_DATABASE');
-$port = getenv('DB_PORT');
+$servername = '127.0.0.1';
+$username = 'u520364085_chart';
+$password = 'Kadatahu123db';
+$dbname = 'u520364085_chart';
+$port = 3306;
 
 // Debugging: Log environment variables (remove this in production)
 error_log("DB_HOST: $servername, DB_USERNAME: $username, DB_DATABASE: $dbname, DB_PORT: $port");
@@ -31,7 +25,8 @@ if ($conn->connect_error) {
 }
 
 // Function to sanitize input
-function sanitize_input($data) {
+function sanitize_input($data)
+{
     return htmlspecialchars(strip_tags(trim($data)));
 }
 
@@ -74,4 +69,3 @@ $conn->close();
 
 // Return JSON response
 echo json_encode($response);
-?>
