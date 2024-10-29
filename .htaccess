@@ -41,3 +41,6 @@ Options -Indexes
     Order allow,deny
     Deny from all
 </FilesMatch>
+
+# Set PHP version to 7.4
+AddHandler application/x-httpd-php74 .php
