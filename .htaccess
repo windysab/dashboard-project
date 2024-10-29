@@ -1,4 +1,10 @@
+# Set environment variables
 SetEnv DB_SERVER localhost
 SetEnv DB_USERNAME root
 SetEnv DB_PASSWORD 
 SetEnv DB_NAME your_database_name
+
+# Allow access to index.html
+DirectoryIndex index.html
+
+# Other rules...
