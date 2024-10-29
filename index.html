@@ -488,23 +488,6 @@
             return /Mobi|Android/i.test(navigator.userAgent);
         }
     </script>
-    <script>
-        $(document).ready(function () {
-            $('#voiceCallButton').on('click', function () {
-                if (!isMobileDevice()) {
-                    alert('Layanan ini hanya tersedia di perangkat mobile.');
-                    return; // Menghentikan eksekusi lebih awal
-                } else {
-                    var layanan = $(this).attr("layanan");
-                    $('#layanan').val(layanan);
-                    $('#modal').modal("show");
-                }
-            });
-        });
-
-        function isMobileDevice() {
-            return /Mobi|Android/i.test(navigator.userAgent);
-        }
-    </script>
+    
 </body>
 </html>
