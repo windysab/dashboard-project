@@ -2262,7 +2262,7 @@ hr.dark {
 }
 
 .header-brand .logo img {
-    width: 50px; /* Adjust the width as needed */
-    height: 50px; /* Adjust the height as needed */
-    margin-top: 50px; /* Adjust the margin to move the logo upwards */
+    width: 30px; /* Mengatur lebar gambar menjadi lebih kecil */
+    height: 30px; /* Mengatur tinggi gambar menjadi lebih kecil */
+    margin-top: -20px; /* Mengatur margin atas untuk memindahkan logo lebih ke atas */
 }
