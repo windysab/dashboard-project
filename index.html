@@ -74,7 +74,11 @@
                 font-size: 12px;
             }
         }
-
+        .mySlides {
+            display: none;
+            width: 100%;
+            height: auto;
+        }
         
     </style>
 </head>
@@ -495,7 +499,7 @@
 
         updateVisitorCount();
     </script>
-    <script>
+    <!-- <script>
         function getVisitorCount() {
             const url = 'https://api.countapi.xyz/hit/ptsp-amuntai/visits';
             fetch(url)
@@ -521,6 +525,37 @@
             slides[slideIndex-1].style.display = "block";  
             setTimeout(showSlides, 3000); // Change image every 3 seconds
         }
+    </script> -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            function getVisitorCount() {
+                const url = 'https://api.countapi.xyz/hit/ptsp-amuntai/visits';
+                fetch(url)
+                    .then(response => response.json())
+                    .then(data => {
+                        document.getElementById('totalCount').innerText = data.value;
+                    });
+            }
+
+            getVisitorCount();
+
+            let slideIndex = 0;
+            showSlides();
+
+            function showSlides() {
+                let slides = document.getElementsByClassName("mySlides");
+                for (let i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                slideIndex++;
+                if (slideIndex > slides.length) {
+                    slideIndex = 1
+                }
+                slides[slideIndex - 1].style.display = "block";
+                setTimeout(showSlides, 3000); // Ganti gambar setiap 3 detik
+            }
+        });
     </script>
 
 </body>
