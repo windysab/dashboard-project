@@ -591,7 +591,7 @@ dd dl:last-child {
 	
 	.header-brand .logo img {
 		width: 50px; /* Adjust the size as needed */
-		height: auto;
+		height: 50px;
 	}
 	
 	.header-brand .nav-toggle {
