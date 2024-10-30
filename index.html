@@ -94,7 +94,7 @@
         <div class="overlay-inner bg-dark opacity-50"></div>
     </div>
     <!-- Site header -->
-     
+
     <header class="site-header header-light header-mobile-light">
         <div class="header-brand">
             <a class="logo" href="#">
@@ -460,15 +460,20 @@
         });
     </script>
     <script>
-        function updateVisitorCount() {
-            const today = new Date().toLocaleDateString();
-            const month = new Date().getMonth();
+        async function updateVisitorCount() {
+            const today = new Date().toLocaleDateString('en-CA'); // Format YYYY-MM-DD
+            const month = new Date().getMonth() + 1; // Bulan dalam JavaScript dimulai dari 0
 
-            let totalCount = localStorage.getItem('totalCount') || 0;
-            let todayCount = localStorage.getItem('todayCount') || 0;
-            let todayDate = localStorage.getItem('todayDate') || today;
-            let monthCount = localStorage.getItem('monthCount') || 0;
-            let currentMonth = localStorage.getItem('currentMonth') || month;
+            // Ambil data dari server
+            let response = await fetch('getVisitorCount.php');
+            let data = await response.json();
+
+            let totalCount = data.total_count || 0;
+            let todayCount = data.today_count || 0;
+            let todayDate = data.today_date || today;
+            let monthCount = data.month_count || 0;
+            let currentMonth = data.current_month || month;
+
             if (todayDate !== today) {
                 todayCount = 0;
                 todayDate = today;
@@ -480,11 +485,22 @@
             totalCount++;
             todayCount++;
             monthCount++;
-            localStorage.setItem('totalCount', totalCount);
-            localStorage.setItem('todayCount', todayCount);
-            localStorage.setItem('todayDate', todayDate);
-            localStorage.setItem('monthCount', monthCount);
-            localStorage.setItem('currentMonth', currentMonth);
+
+            // Simpan data ke server
+            await fetch('updateVisitorCount.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    totalCount: totalCount,
+                    todayCount: todayCount,
+                    todayDate: todayDate,
+                    monthCount: monthCount,
+                    currentMonth: currentMonth
+                })
+            });
+
             document.getElementById('totalCount').innerText = totalCount;
             document.getElementById('todayCount').innerText = todayCount;
             document.getElementById('monthCount').innerText = monthCount;
