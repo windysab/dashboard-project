@@ -1,28 +1,6 @@
 <?php
 require 'vendor/autoload.php';
-
-// Load environment variables from .env file
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-$dotenv->load();
-
-// Get database credentials from environment variables
-$servername = '127.0.0.1';
-$username = 'u520364085_chart';
-$password = 'Kadatahu123db';
-$dbname = 'u520364085_chart';
-$port = 3306;
-
-// Debugging: Log environment variables (remove this in production)
-error_log("DB_HOST: $servername, DB_USERNAME: $username, DB_DATABASE: $dbname, DB_PORT: $port");
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname, $port);
-
-// Check connection
-if ($conn->connect_error) {
-    error_log('Connection failed: ' . $conn->connect_error);
-    die(json_encode(['success' => false, 'message' => 'Connection failed: ' . $conn->connect_error]));
-}
+require 'dbConnection.php'; // Include the database connection file
 
 // Function to sanitize input
 function sanitize_input($data)
@@ -69,3 +47,4 @@ $conn->close();
 
 // Return JSON response
 echo json_encode($response);
+?>
