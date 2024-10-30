@@ -2260,3 +2260,9 @@ hr.dark {
 		font-size: 1rem;
 	}
 }
+
+.mySlides {
+	display: none;
+	width: 100%;
+	height: auto;
+}
