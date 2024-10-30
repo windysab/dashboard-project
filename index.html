@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="assets/css/fonts.css">
     <!-- <link href="assets/images/favicon.ico" rel="icon"> -->
     <!-- <link rel="shortcut icon" href="assets/images/favicon.ico">  -->
-     <link rel="icon" href="assets/images/PA-AMUNTAI.ico">
+    <link rel="icon" href="assets/images/PA-AMUNTAI.ico">
     <link rel="stylesheet" href="assets/css/all.min.css">
     <link rel="stylesheet" href="assets/css/fontawesome/all.min.css">
     <style>
@@ -74,14 +74,29 @@
                 font-size: 12px;
             }
         }
+
+        .mySlides {
+            display: none;
+            width: 100%;
+            height: auto;
+        }
     </style>
 </head>
 
 <body class="slideshow-background">
     <!-- Global overlay -->
-    <div class="global-overlay">
+    <!-- <div class="global-overlay">
         <div class="overlay-inner bg-image-holder bg-cover">
             <img src="assets/images/background.jpg" alt="">
+        </div>
+        <div class="overlay-inner bg-dark opacity-50"></div>
+    </div> -->
+
+    <div class="global-overlay">
+        <div class="overlay-inner bg-image-holder bg-cover slideshow-container">
+            <img src="assets/images/1.png" alt="" class="mySlides">
+            <img src="assets/images/2.png" alt="" class="mySlides">
+            <img src="assets/images/3.png" alt="" class="mySlides">
         </div>
         <div class="overlay-inner bg-dark opacity-50"></div>
     </div>
@@ -496,6 +511,22 @@
 
         getVisitorCount();
     </script>
+    <script>
+        let slideIndex = 0;
+        showSlides();
     
+        function showSlides() {
+            let slides = document.getElementsByClassName("mySlides");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            slides[slideIndex-1].style.display = "block";  
+            setTimeout(showSlides, 3000); // Change image every 3 seconds
+        }
+    </script>
+
 </body>
+
 </html>
