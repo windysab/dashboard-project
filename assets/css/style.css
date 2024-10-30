@@ -330,8 +330,6 @@ dd dl:last-child {
 	-webkit-box-pack: justify;
 	-ms-flex-pack: justify;
 	justify-content: space-between;
-	padding-top: 5px; /* Mengurangi padding atas header */
-    padding-bottom: 5px; /* Mengurangi padding bawah header */
 }
 
 .header-brand {
