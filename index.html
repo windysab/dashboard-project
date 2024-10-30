@@ -74,8 +74,14 @@
                 font-size: 12px;
             }
         }
-    
-        
+
+        .mySlides {
+            display: none;
+        }
+
+        .active-slide {
+            display: block;
+        }
     </style>
 </head>
 
@@ -494,6 +500,31 @@
         }
 
         updateVisitorCount();
+    </script>
+    <script>
+        function showSlides() {
+            let slides = document.getElementsByClassName("mySlides");
+            let currentIndex = 0;
+
+            function displayNextSlide() {
+                // Sembunyikan semua slide
+                for (let i = 0; i < slides.length; i++) {
+                    slides[i].classList.remove("active-slide");
+                }
+                // Tampilkan slide berikutnya
+                slides[currentIndex].classList.add("active-slide");
+                // Update index untuk slide berikutnya
+                currentIndex = (currentIndex + 1) % slides.length;
+            }
+
+            // Tampilkan slide pertama
+            displayNextSlide();
+            // Atur interval untuk pergantian slide
+            setInterval(displayNextSlide, 3000); // Ganti slide setiap 3 detik
+        }
+
+        // Panggil fungsi showSlides saat halaman selesai dimuat
+        window.onload = showSlides;
     </script>
 
 
