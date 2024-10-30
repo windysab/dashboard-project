@@ -571,17 +571,29 @@ dd dl:last-child {
 		backface-visibility: hidden;
 	}
 
-	.header-brand {
+	/* .header-brand {
 		width: auto;
 	}
 
 	.header-brand .logo {
 		color: #fff;
-		width: 20px !important;
-		height: 20px !important;
-		margin-top: -30px !important;
 	}
 
+	.header-brand .nav-toggle {
+		display: none;
+	} */
+
+	.header-brand {
+		width: auto;
+		display: flex;
+		align-items: flex-start; /* Align items to the top */
+	}
+	
+	.header-brand .logo img {
+		width: 50px; /* Adjust the size as needed */
+		height: auto;
+	}
+	
 	.header-brand .nav-toggle {
 		display: none;
 	}
