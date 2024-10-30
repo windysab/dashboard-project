@@ -577,6 +577,9 @@ dd dl:last-child {
 
 	.header-brand .logo {
 		color: #fff;
+		width: 20px !important;
+		height: 20px !important;
+		margin-top: -30px !important;
 	}
 
 	.header-brand .nav-toggle {
@@ -2261,8 +2264,3 @@ hr.dark {
 	}
 }
 
-.header-brand .logo img {
-    width: 20px !important;
-    height: 20px !important;
-    margin-top: -30px !important;
-}
