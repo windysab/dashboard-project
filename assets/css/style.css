@@ -2261,3 +2261,8 @@ hr.dark {
 	}
 }
 
+.header-brand .logo img {
+    width: 50px; /* Adjust the width as needed */
+    height: auto;
+    margin-top: -10px; /* Adjust the margin to move the logo upwards */
+}
