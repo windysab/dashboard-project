@@ -35,39 +35,83 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-12 col-lg-4 mb-3 text-center">
-                                <img class="shadow img-fluid img-rounded mb-0 animated" data-animation="fadeInUp" data-animation-delay="600" src="assets/images/layanan_telepon.jpg" alt="Layanan Telepon">
-                                <div class="feature-block p-3 bg-white text-black animated" data-animation="fadeInUp" data-animation-delay="600">
-                                    <h2 class="mb-0"><strong>Voice Call</strong></h2>
-                                    <p class="h5 mb-2">Layanan Informasi Melalui Telepon.</p>
-                                    <button type="button" layanan="telepon" class="view btn btn-block btn-primary btn-pill mb-0 mr-0">
-                                        <i class="fab fas fa-phone-volume mr-1"></i> (021) 1)58352092
-                                    </button>
+                            <div class="col-12 col-lg-3 mb-3 text-center">
+                                <div class="service-card">
+                                    <img class="shadow img-fluid img-rounded mb-0 animated" data-animation="fadeInUp" data-animation-delay="600" src="assets/images/layanan_telepon.jpg" alt="Layanan Telepon">
+                                    <div class="feature-block p-3 bg-white text-black animated" data-animation="fadeInUp" data-animation-delay="600">
+                                        <h2 class="mb-0"><strong>Voice Call</strong></h2>
+                                        <p class="h5 mb-2">Layanan Informasi Melalui Telepon.</p>
+                                        <button type="button" layanan="telepon" class="view btn btn-block btn-primary btn-pill mb-0 mr-0">
+                                            <i class="fas fa-phone-volume mr-1"></i> (021) 58352092
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="col-12 col-lg-4 mb-3 text-center">
-                                <img class="shadow img-fluid img-rounded mb-0 animated" data-animation="fadeInUp" data-animation-delay="600" src="assets/images/layanan_zoom.jpg" alt="Layanan Zoom">
-                                <div class="feature-block p-3 bg-white text-black animated" data-animation="fadeInUp" data-animation-delay="600">
-                                    <h2 class="mb-0"><strong>Video Call</strong></h2>
-                                    <p class="h5 mb-2">Layanan Informasi Melalui ZOOM.</p>
-                                    <button type="button" layanan="zoom" class="view btn btn-block btn-primary btn-pill mb-0 mr-0">
-                                        <i class="fab fas fa-video mr-1"></i> Buka Aplikasi Zoom
-                                    </button>
+                            <div class="col-12 col-lg-3 mb-3 text-center">
+                                <div class="service-card">
+                                    <img class="shadow img-fluid img-rounded mb-0 animated" data-animation="fadeInUp" data-animation-delay="600" src="assets/images/layanan_zoom.jpg" alt="Layanan Zoom">
+                                    <div class="feature-block p-3 bg-white text-black animated" data-animation="fadeInUp" data-animation-delay="600">
+                                        <h2 class="mb-0"><strong>Video Call</strong></h2>
+                                        <p class="h5 mb-2">Layanan Informasi Melalui ZOOM.</p>
+                                        <button type="button" layanan="zoom" class="view btn btn-block btn-primary btn-pill mb-0 mr-0">
+                                            <i class="fas fa-video mr-1"></i> Buka Aplikasi Zoom
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="col-12 col-lg-4 mb-3 text-center">
-                                <img class="shadow img-fluid img-rounded mb-0 animated" data-animation="fadeInUp" data-animation-delay="600" src="assets/images/layanan_chat.jpg" alt="Layanan Chat">
-                                <div class="feature-block p-3 bg-white text-black animated" data-animation="fadeInUp" data-animation-delay="600">
-                                    <h2 class="mb-0"><strong>Online Chat</strong></h2>
-                                    <p class="h5 mb-2">Layanan Informasi Melalui Chat.</p>
-                                    <button type="button" class="btn btn-block btn-primary btn-pill mb-0 mr-0">
-                                        <i class="fab fab fa-facebook-messenger mr-1"></i> Klik Mulai Percakapan/Kirim Pesan
-                                    </button>
+                            <div class="col-12 col-lg-3 mb-3 text-center">
+                                <div class="service-card">
+                                    <img class="shadow img-fluid img-rounded mb-0 animated" data-animation="fadeInUp" data-animation-delay="600" src="assets/images/layanan_chat.jpg" alt="Layanan Chat">
+                                    <div class="feature-block p-3 bg-white text-black animated" data-animation="fadeInUp" data-animation-delay="600">
+                                        <h2 class="mb-0"><strong>Online Chat</strong></h2>
+                                        <p class="h5 mb-2">Layanan Informasi Melalui Chat.</p>
+                                        <button type="button" class="btn btn-block btn-primary btn-pill mb-0 mr-0">
+                                            <i class="fab fa-facebook-messenger mr-1"></i> Klik Mulai Percakapan
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-12 col-lg-3 mb-3 text-center">
+                                <div class="service-card">
+                                    <img class="shadow img-fluid img-rounded mb-0 animated" data-animation="fadeInUp" data-animation-delay="600" src="assets/images/layanan_pengaduan.jpg" alt="Layanan Pengaduan">
+                                    <div class="feature-block p-3 bg-white text-black animated" data-animation="fadeInUp" data-animation-delay="600">
+                                        <h2 class="mb-0"><strong>Pengaduan</strong></h2>
+                                        <p class="h5 mb-2">Layanan Pengaduan Online.</p>
+                                        <button type="button" layanan="pengaduan" class="view btn btn-block btn-danger btn-pill mb-0 mr-0">
+                                            <i class="fas fa-exclamation-circle mr-1"></i> Ajukan Pengaduan
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        
+                        <style>
+                            .service-card {
+                                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                                border-radius: 10px;
+                                overflow: hidden;
+                            }
+                            
+                            .service-card:hover {
+                                transform: translateY(-10px);
+                                box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+                            }
+                            
+                            .feature-block {
+                                border-radius: 0 0 10px 10px;
+                            }
+                            
+                            .btn-pill {
+                                transition: all 0.3s ease;
+                            }
+                            
+                            .btn-pill:hover {
+                                transform: scale(1.05);
+                            }
+                        </style>
                         
                     </div>
                 </section>
