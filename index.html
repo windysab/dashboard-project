@@ -186,7 +186,7 @@
                                         <h2 class="mb-0"><strong>Voice Call</strong></h2>
                                         <p class="h5 mb-2">Layanan Informasi Melalui Telepon.</p>
                                         <button type="button" layanan="telepon"
-                                            class="view btn btn-block btn-primary btn-pill mb-0 mr-0"
+                                            class="view-pengaduan btn btn-block btn-primary btn-pill mb-0 mr-0"
                                             id="voiceCallButton">
                                             <i class="fas fa-phone mr-1"></i> 0527 - 61002
                                         </button>
@@ -201,7 +201,7 @@
                                         <h2 class="mb-0"><strong>Video Call</strong></h2>
                                         <p class="h5 mb-2">Layanan Informasi Melalui ZOOM.</p>
                                         <button type="button" layanan="zoom"
-                                            class="view btn btn-block btn-primary btn-pill mb-0 mr-0">
+                                            class="view-pengaduan btn btn-block btn-primary btn-pill mb-0 mr-0">
                                             <i class="fas fa-video mr-1"></i> Buka Aplikasi Zoom
                                         </button>
                                     </div>
@@ -215,7 +215,7 @@
                                         <h2 class="mb-0"><strong>Online Chat</strong></h2>
                                         <p class="h5 mb-2">Layanan Informasi Melalui Chat.</p>
                                         <button type="button" layanan="chat"
-                                            class="btn btn-block btn-primary btn-pill mb-0 mr-0 view">
+                                            class="view-pengaduan btn btn-danger btn-pill w-100">
                                             <i class="fas fa-envelope mr-1"></i> Klik Mulai
                                             Percakapan/Kirim Pesan
                                         </button>
@@ -241,7 +241,7 @@
                                             <h2 class="card-title mb-2"><strong>Pengaduan Telepon</strong></h2>
                                             <p class="card-text h5 mb-3">Layanan pengaduan melalui telepon.</p>
                                             <button type="button" layanan="pengaduan_telepon"
-                                                class="view btn btn-danger btn-pill w-100">
+                                                class="view-pengaduan btn btn-danger btn-pill w-100">
                                                 <i class="fas fa-phone mr-1"></i> 0813-4585-3988
                                             </button>
                                         </div>
@@ -257,7 +257,7 @@
                                             <h2 class="card-title mb-2"><strong>Pengaduan Video</strong></h2>
                                             <p class="card-text h5 mb-3">Layanan pengaduan melalui video call.</p>
                                             <button type="button" layanan="pengaduan_video"
-                                                class="view btn btn-danger btn-pill w-100">
+                                                class="view-pengaduan btn btn-danger btn-pill w-100">
                                                 <i class="fas fa-video mr-1"></i> Video Call
                                             </button>
                                         </div>
@@ -273,7 +273,7 @@
                                             <h2 class="card-title mb-2"><strong>Pengaduan Online</strong></h2>
                                             <p class="card-text h5 mb-3">Layanan pengaduan melalui chat.</p>
                                             <button type="button" layanan="pengaduan_chat"
-                                                class="view btn btn-danger btn-pill w-100">
+                                                class="view-pengaduan btn btn-danger btn-pill w-100">
                                                 <i class="fas fa-comments mr-1"></i> Chat Pengaduan
                                             </button>
                                         </div>
@@ -592,16 +592,16 @@
                             if (layanan == 'pengaduan_telepon') {
                                 window.location = "tel:081345853988";
                             } else if (layanan == 'pengaduan_video') {
-                                window.location = "https://zoom.us/j/your-zoom-id";
+                                window.location = "https://us02web.zoom.us/j/5644244104?pwd=YlRaWERubFI1ZWk2RGJNL0IvRUNCUT09";
                             } else if (layanan == 'pengaduan_chat') {
                                 window.location = "https://wa.me/6282149151132";
                             }
                         } else {
-                            console.log("Error: " + data.message);
+                            alert("Error: " + data.message);
                         }
                     })
                     .fail(function () {
-                        console.log("error");
+                        alert("Terjadi kesalahan saat mengirim data. Silakan coba lagi.");
                     });
             });
         });
