@@ -224,59 +224,46 @@
                             </div>
                             <div class="row mt-5">
                                 <div class="col-12 text-center mb-4">
-                                    <h2 class="text-white animated" data-animation="fadeInUp"><strong>LAYANAN
-                                            PENGADUAN</strong></h2>
-                                    <div class="divider mx-auto bg-white animated mt-1 mb-4" data-animation="fadeInUp"
-                                        data-animation-delay="200">
-                                        <span></span>
-                                    </div>
+                                    <h2 class="text-white animated" data-animation="fadeInUp"><strong>LAYANAN PENGADUAN</strong></h2>
+                                    <div class="divider mx-auto bg-white animated mt-1 mb-4" data-animation="fadeInUp" data-animation-delay="200">
+                                        <span></span></div>
                                 </div>
-
+                            
                                 <div class="col-12 col-lg-4 mb-3 text-center">
-                                    <div class="card h-100 border-0 shadow-lg animated" data-animation="fadeInUp"
-                                        data-animation-delay="600">
-                                        <img class="card-img-top img-fluid rounded-top"
-                                            src="assets/images/pengaduan_telepon.jpg" alt="Pengaduan Telepon">
+                                    <div class="card h-100 border-0 shadow-lg animated" data-animation="fadeInUp" data-animation-delay="600">
+                                        <img class="card-img-top img-fluid rounded-top" src="assets/images/pengaduan_telepon.jpg"
+                                            alt="Pengaduan Telepon">
                                         <div class="card-body bg-white text-black">
                                             <h2 class="card-title mb-2"><strong>Pengaduan Telepon</strong></h2>
                                             <p class="card-text h5 mb-3">Layanan pengaduan melalui telepon.</p>
-                                            <!-- Change existing complaint buttons from -->
                                             <button type="button" layanan="pengaduan_telepon" class="view btn btn-danger btn-pill w-100">
-                                            
-                                            <!-- To -->
-                                            <button type="button" layanan="pengaduan_telepon" class="view-pengaduan btn btn-danger btn-pill w-100">
                                                 <i class="fas fa-phone mr-1"></i> 0813-4585-3988
                                             </button>
                                         </div>
                                     </div>
                                 </div>
-
+                            
                                 <div class="col-12 col-lg-4 mb-3 text-center">
-                                    <div class="card h-100 border-0 shadow-lg animated" data-animation="fadeInUp"
-                                        data-animation-delay="600">
-                                        <img class="card-img-top img-fluid rounded-top"
-                                            src="assets/images/pengaduan_video.jpg" alt="Pengaduan Video">
+                                    <div class="card h-100 border-0 shadow-lg animated" data-animation="fadeInUp" data-animation-delay="600">
+                                        <img class="card-img-top img-fluid rounded-top" src="assets/images/pengaduan_video.jpg"
+                                            alt="Pengaduan Video">
                                         <div class="card-body bg-white text-black">
                                             <h2 class="card-title mb-2"><strong>Pengaduan Video</strong></h2>
                                             <p class="card-text h5 mb-3">Layanan pengaduan melalui video call.</p>
-                                            <button type="button" layanan="pengaduan_video"
-                                                class="view btn btn-danger btn-pill w-100">
+                                            <button type="button" layanan="pengaduan_video" class="view btn btn-danger btn-pill w-100">
                                                 <i class="fas fa-video mr-1"></i> Video Call
                                             </button>
                                         </div>
                                     </div>
                                 </div>
-
+                            
                                 <div class="col-12 col-lg-4 mb-3 text-center">
-                                    <div class="card h-100 border-0 shadow-lg animated" data-animation="fadeInUp"
-                                        data-animation-delay="600">
-                                        <img class="card-img-top img-fluid rounded-top"
-                                            src="assets/images/pengaduan_chat.jpg" alt="Pengaduan Chat">
+                                    <div class="card h-100 border-0 shadow-lg animated" data-animation="fadeInUp" data-animation-delay="600">
+                                        <img class="card-img-top img-fluid rounded-top" src="assets/images/pengaduan_chat.jpg" alt="Pengaduan Chat">
                                         <div class="card-body bg-white text-black">
                                             <h2 class="card-title mb-2"><strong>Pengaduan Online</strong></h2>
                                             <p class="card-text h5 mb-3">Layanan pengaduan melalui chat.</p>
-                                            <button type="button" layanan="pengaduan_chat"
-                                                class="view btn btn-danger btn-pill w-100">
+                                            <button type="button" layanan="pengaduan_chat" class="view btn btn-danger btn-pill w-100">
                                                 <i class="fas fa-comments mr-1"></i> Chat Pengaduan
                                             </button>
                                         </div>
@@ -429,42 +416,7 @@
             </form>
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
-    <!-- Add this after the existing modal -->
-    <div id="modalPengaduan" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="pengaduanModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog">
-            <form id="modPengaduan">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title mt-0" id="pengaduanModalLabel">Isi Biodata Pengaduan</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    </div>
-                    <div class="modal-body">
-                        <h6 class="modal-title mt-0">Silahkan lengkapi data berikut sebelum mengajukan pengaduan!</h6>
-                        <hr style="margin: 10px 0px;">
-
-                        <div class="form-group mb-2">
-                            <label>Nama Lengkap</label>
-                            <input type="hidden" id="satker_pengaduan" name="satker" value="8" readonly>
-                            <input type="hidden" id="layanan_pengaduan" name="layanan" readonly>
-                            <input type="text" id="nama_pengaduan" name="nama" class="form-control floating-label"
-                                placeholder="Nama Lengkap" required>
-                        </div>
-
-                        <div class="form-group mb-0">
-                            <label>Nomor Handphone</label>
-                            <input type="text" id="nope_pengaduan" name="nope" class="form-control floating-label"
-                                placeholder="Nomor Handphone" required>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button class="btn btn-primary w-md waves-effect waves-light" type="submit">Simpan</button>
-                        <button type="button" class="btn btn-danger waves-effect" data-dismiss="modal">Batal</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
+    <!-- JAVASCRIPT -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/jquery.easing.min.js"></script>
@@ -556,61 +508,6 @@
         });
     </script>
     <script>
-        $(document).ready(function () {
-            // Handle complaint button clicks
-            $('.view-pengaduan').click(function () {
-                var layanan = $(this).attr("layanan");
-                $('#layanan_pengaduan').val(layanan);
-                $('#modalPengaduan').modal("show");
-            });
-
-            // Handle complaint form submission
-            $('#modPengaduan').on('submit', function (event) {
-                event.preventDefault();
-                var nama = $('#nama_pengaduan').val().trim();
-                var nope = $('#nope_pengaduan').val().trim();
-                var layanan = $('#layanan_pengaduan').val().trim();
-                var satker = $('#satker_pengaduan').val().trim();
-
-                if (nama === "" || nope === "" || layanan === "" || satker === "") {
-                    alert("Semua field harus diisi!");
-                    return;
-                }
-
-                $.ajax({
-                    url: 'https://ptsp.pa-amuntai.go.id/savePengguna.php',
-                    type: 'POST',
-                    dataType: 'json',
-                    data: {
-                        nama: nama,
-                        nope: nope,
-                        layanan: layanan,
-                        satker: satker
-                    },
-                })
-                    .done(function (data) {
-                        if (data.success && data.data > 0) {
-                            $('#modalPengaduan').modal("hide");
-
-                            if (layanan == 'pengaduan_telepon') {
-                                window.location = "tel:081345853988";
-                            } else if (layanan == 'pengaduan_video') {
-                                window.location = "https://zoom.us/j/your-zoom-id";
-                            } else if (layanan == 'pengaduan_chat') {
-                                window.location = "https://wa.me/6282149151132";
-                            }
-                        } else {
-                            console.log("Error: " + data.message);
-                        }
-                    })
-                    .fail(function () {
-                        console.log("error");
-                    });
-            });
-        });
-
-    </script>
-    <script>
         async function updateVisitorCount() {
             const today = new Date().toLocaleDateString('en-CA'); // Format YYYY-MM-DD
             const month = new Date().getMonth() + 1; // Bulan dalam JavaScript dimulai dari 0
@@ -689,3 +586,4 @@
 </body>
 
 </html>
+
