@@ -553,59 +553,61 @@
         });
     </script>
     <script>
-        $(document).ready(function () {
-            // Handle complaint button clicks
-            $('.view-pengaduan').click(function () {
-                var layanan = $(this).attr("layanan");
-                $('#layanan_pengaduan').val(layanan);
-                $('#modalPengaduan').modal("show");
-            });
+        // ... existing code ...
+       
+            $(document).ready(function () {
+                // Handle complaint button clicks
+                $('.view-pengaduan').click(function () {
+                    var layanan = $(this).attr("layanan");
+                    $('#layanan_pengaduan').val(layanan);
+                    $('#modalPengaduan').modal("show");
+                });
 
-            // Handle complaint form submission
-            $('#modPengaduan').on('submit', function (event) {
-                event.preventDefault();
-                var nama = $('#nama_pengaduan').val().trim();
-                var nope = $('#nope_pengaduan').val().trim();
-                var layanan = $('#layanan_pengaduan').val().trim();
-                var satker = $('#satker_pengaduan').val().trim();
+                // Handle complaint form submission
+                $('#modPengaduan').on('submit', function (event) {
+                    event.preventDefault();
+                    var nama = $('#nama_pengaduan').val().trim();
+                    var nope = $('#nope_pengaduan').val().trim();
+                    var layanan = $('#layanan_pengaduan').val().trim();
+                    var satker = $('#satker_pengaduan').val().trim();
 
-                if (nama === "" || nope === "" || layanan === "" || satker === "") {
-                    alert("Semua field harus diisi!");
-                    return;
-                }
+                    if (nama === "" || nope === "" || layanan === "" || satker === "") {
+                        alert("Semua field harus diisi!");
+                        return;
+                    }
 
-                $.ajax({
-                    url: 'https://ptsp.pa-amuntai.go.id/savePengguna.php',
-                    type: 'POST',
-                    dataType: 'json',
-                    data: {
-                        nama: nama,
-                        nope: nope,
-                        layanan: layanan,
-                        satker: satker
-                    },
-                })
-                    .done(function (data) {
-                        if (data.success && data.data > 0) {
-                            $('#modalPengaduan').modal("hide");
-
-                            if (layanan == 'pengaduan_telepon') {
-                                window.location = "tel:081345853988";
-                            } else if (layanan == 'pengaduan_video') {
-                                window.location = "https://zoom.us/j/your-zoom-id";
-                            } else if (layanan == 'pengaduan_chat') {
-                                window.location = "https://wa.me/6282149151132";
-                            }
-                        } else {
-                            console.log("Error: " + data.message);
-                        }
+                    $.ajax({
+                        url: 'https://ptsp.pa-amuntai.go.id/savePengguna.php',
+                        type: 'POST',
+                        dataType: 'json',
+                        data: {
+                            nama: nama,
+                            nope: nope,
+                            layanan: layanan,
+                            satker: satker
+                        },
                     })
-                    .fail(function () {
-                        console.log("error");
-                    });
-            });
-        });
+                        .done(function (data) {
+                            if (data.success && data.data > 0) {
+                                $('#modalPengaduan').modal("hide");
 
+                                if (layanan == 'pengaduan_telepon') {
+                                    window.location = "tel:081345853988";
+                                } else if (layanan == 'pengaduan_video') {
+                                    window.location = "https://us02web.zoom.us/j/5644244104?pwd=YlRaWERubFI1ZWk2RGJNL0IvRUNCUT09";
+                                } else if (layanan == 'pengaduan_chat') {
+                                    window.location = "https://wa.me/6282149151132";
+                                }
+                            } else {
+                                alert("Error: " + data.message);
+                            }
+                        })
+                        .fail(function () {
+                            alert("Terjadi kesalahan saat mengirim data. Silakan coba lagi.");
+                        });
+                });
+            });
+        
     </script>
     <script>
         async function updateVisitorCount() {
