@@ -241,7 +241,7 @@
                                             <h2 class="card-title mb-2"><strong>Pengaduan Telepon</strong></h2>
                                             <p class="card-text h5 mb-3">Layanan pengaduan melalui telepon.</p>
                                             <button type="button" layanan="pengaduan_telepon"
-                                                class="view btn btn-danger btn-pill w-100">
+                                                class="view-pengaduan btn btn-danger btn-pill w-100">
                                                 <i class="fas fa-phone mr-1"></i> 0813-4585-3988
                                             </button>
                                         </div>
@@ -257,7 +257,7 @@
                                             <h2 class="card-title mb-2"><strong>Pengaduan Video</strong></h2>
                                             <p class="card-text h5 mb-3">Layanan pengaduan melalui video call.</p>
                                             <button type="button" layanan="pengaduan_video"
-                                                class="view btn btn-danger btn-pill w-100">
+                                                class="view-pengaduan btn btn-danger btn-pill w-100">
                                                 <i class="fas fa-video mr-1"></i> Video Call
                                             </button>
                                         </div>
@@ -273,7 +273,7 @@
                                             <h2 class="card-title mb-2"><strong>Pengaduan Online</strong></h2>
                                             <p class="card-text h5 mb-3">Layanan pengaduan melalui chat.</p>
                                             <button type="button" layanan="pengaduan_chat"
-                                                class="view btn btn-danger btn-pill w-100">
+                                                class="view-pengaduan btn btn-danger btn-pill w-100">
                                                 <i class="fas fa-comments mr-1"></i> Chat Pengaduan
                                             </button>
                                         </div>
@@ -554,60 +554,60 @@
     </script>
     <script>
         // ... existing code ...
-       
-            $(document).ready(function () {
-                // Handle complaint button clicks
-                $('.view-pengaduan').click(function () {
-                    var layanan = $(this).attr("layanan");
-                    $('#layanan_pengaduan').val(layanan);
-                    $('#modalPengaduan').modal("show");
-                });
 
-                // Handle complaint form submission
-                $('#modPengaduan').on('submit', function (event) {
-                    event.preventDefault();
-                    var nama = $('#nama_pengaduan').val().trim();
-                    var nope = $('#nope_pengaduan').val().trim();
-                    var layanan = $('#layanan_pengaduan').val().trim();
-                    var satker = $('#satker_pengaduan').val().trim();
-
-                    if (nama === "" || nope === "" || layanan === "" || satker === "") {
-                        alert("Semua field harus diisi!");
-                        return;
-                    }
-
-                    $.ajax({
-                        url: 'https://ptsp.pa-amuntai.go.id/savePengguna.php',
-                        type: 'POST',
-                        dataType: 'json',
-                        data: {
-                            nama: nama,
-                            nope: nope,
-                            layanan: layanan,
-                            satker: satker
-                        },
-                    })
-                        .done(function (data) {
-                            if (data.success && data.data > 0) {
-                                $('#modalPengaduan').modal("hide");
-
-                                if (layanan == 'pengaduan_telepon') {
-                                    window.location = "tel:081345853988";
-                                } else if (layanan == 'pengaduan_video') {
-                                    window.location = "https://us02web.zoom.us/j/5644244104?pwd=YlRaWERubFI1ZWk2RGJNL0IvRUNCUT09";
-                                } else if (layanan == 'pengaduan_chat') {
-                                    window.location = "https://wa.me/6282149151132";
-                                }
-                            } else {
-                                alert("Error: " + data.message);
-                            }
-                        })
-                        .fail(function () {
-                            alert("Terjadi kesalahan saat mengirim data. Silakan coba lagi.");
-                        });
-                });
+        $(document).ready(function () {
+            // Handle complaint button clicks
+            $('.view-pengaduan').click(function () {
+                var layanan = $(this).attr("layanan");
+                $('#layanan_pengaduan').val(layanan);
+                $('#modalPengaduan').modal("show");
             });
-        
+
+            // Handle complaint form submission
+            $('#modPengaduan').on('submit', function (event) {
+                event.preventDefault();
+                var nama = $('#nama_pengaduan').val().trim();
+                var nope = $('#nope_pengaduan').val().trim();
+                var layanan = $('#layanan_pengaduan').val().trim();
+                var satker = $('#satker_pengaduan').val().trim();
+
+                if (nama === "" || nope === "" || layanan === "" || satker === "") {
+                    alert("Semua field harus diisi!");
+                    return;
+                }
+
+                $.ajax({
+                    url: 'https://ptsp.pa-amuntai.go.id/savePengguna.php',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {
+                        nama: nama,
+                        nope: nope,
+                        layanan: layanan,
+                        satker: satker
+                    },
+                })
+                    .done(function (data) {
+                        if (data.success && data.data > 0) {
+                            $('#modalPengaduan').modal("hide");
+
+                            if (layanan == 'pengaduan_telepon') {
+                                window.location = "tel:081345853988";
+                            } else if (layanan == 'pengaduan_video') {
+                                window.location = "https://us02web.zoom.us/j/5644244104?pwd=YlRaWERubFI1ZWk2RGJNL0IvRUNCUT09";
+                            } else if (layanan == 'pengaduan_chat') {
+                                window.location = "https://wa.me/6282149151132";
+                            }
+                        } else {
+                            alert("Error: " + data.message);
+                        }
+                    })
+                    .fail(function () {
+                        alert("Terjadi kesalahan saat mengirim data. Silakan coba lagi.");
+                    });
+            });
+        });
+
     </script>
     <script>
         async function updateVisitorCount() {
