@@ -1,4 +1,4 @@
-<?php
+ <?php
 $servername = '127.0.0.1';
 $username = 'u520364085_chart';
 $password = 'Kadatahu123db';
