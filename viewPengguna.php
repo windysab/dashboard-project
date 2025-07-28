@@ -273,11 +273,7 @@ $result = $conn->query($sql);
                     <h3><?php echo date('d'); ?></h3>
                     <p><?php echo date('F Y'); ?></p>
                 </div>
-                <div class="stat-card">
-                    <i class="fas fa-clock"></i>
-                    <h3><?php echo date('H:i'); ?></h3>
-                    <p>Waktu Sekarang</p>
-                </div>
+                
             </div>
 
             <!-- Users Table -->
@@ -291,7 +287,7 @@ $result = $conn->query($sql);
                                 <th><i class="fas fa-phone"></i> Kontak</th>
                                 <th><i class="fas fa-concierge-bell"></i> Layanan</th>
                                 <th><i class="fas fa-building"></i> Satuan Kerja</th>
-                                <th><i class="fas fa-calendar-plus"></i> Tanggal Input</th>
+                                
                             </tr>
                         </thead>
                         <tbody>
