@@ -243,7 +243,7 @@ $result = $conn->query($sql);
                             <th><i class="fas fa-user"></i> Nama</th>
                             <th><i class="fas fa-phone"></i> No. HP</th>
                             <th><i class="fas fa-cog"></i> Layanan</th>
-                            <th><i class="fas fa-building"></i> Satker</th>
+                          
                         </tr>
                     </thead>
                     <tbody>
@@ -263,7 +263,7 @@ $result = $conn->query($sql);
                                         </td>
                                         <td><i class='fas fa-phone-alt phone-number'></i> <span class='phone-number'>{$maskedPhone}</span></td>
                                         <td><span class='service-badge'>{$row['layanan']}</span></td>
-                                        <td><i class='fas fa-building text-info'></i> {$row['satker']}</td>
+                                        
                                       </tr>";
                             }
                         } else {
