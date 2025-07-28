@@ -2,6 +2,29 @@
 require 'vendor/autoload.php';
 require 'dbConnection.php'; // Include the database connection file
 
+// Function to format phone number for display
+function formatPhoneNumber($phone)
+{
+    if (empty($phone)) return '-';
+
+    // Remove any non-numeric characters
+    $cleanPhone = preg_replace('/[^0-9]/', '', $phone);
+
+    if (strlen($cleanPhone) >= 3) {
+        // Show first 2-3 digits followed by xxx
+        if (substr($cleanPhone, 0, 2) == '08') {
+            return '08xxx';
+        } else if (substr($cleanPhone, 0, 3) == '628') {
+            return '628xxx';
+        } else if (substr($cleanPhone, 0, 1) == '0') {
+            return substr($cleanPhone, 0, 2) . 'xxx';
+        } else {
+            return substr($cleanPhone, 0, 3) . 'xxx';
+        }
+    }
+    return $phone; // Return original if too short
+}
+
 // Query to get all users
 $sql = "SELECT id, nama, nope, layanan, satker FROM pengguna";
 $result = $conn->query($sql);
@@ -202,6 +225,7 @@ $totalUsers = $countResult->fetch_assoc()['total'];
                             // Output data of each row
                             while ($row = $result->fetch_assoc()) {
                                 $initial = strtoupper(substr($row['nama'], 0, 1));
+                                $maskedPhone = formatPhoneNumber($row['nope']);
                                 echo "<tr>
                                         <td><strong>{$row['id']}</strong></td>
                                         <td>
@@ -210,7 +234,7 @@ $totalUsers = $countResult->fetch_assoc()['total'];
                                                 <span>{$row['nama']}</span>
                                             </div>
                                         </td>
-                                        <td><i class='fas fa-phone-alt text-success'></i> {$row['nope']}</td>
+                                        <td><i class='fas fa-phone-alt text-success'></i> {$maskedPhone}</td>
                                         <td><span class='badge badge-primary'>{$row['layanan']}</span></td>
                                         <td><i class='fas fa-map-marker-alt text-info'></i> {$row['satker']}</td>
                                       </tr>";
