@@ -216,7 +216,7 @@ $totalUsers = $countResult->fetch_assoc()['total'];
                             <th><i class="fas fa-user"></i> Nama</th>
                             <th><i class="fas fa-phone"></i> No. HP</th>
                             <th><i class="fas fa-cog"></i> Layanan</th>
-                            <th><i class="fas fa-building"></i> Satker</th>
+                           
                         </tr>
                     </thead>
                     <tbody>
@@ -236,7 +236,7 @@ $totalUsers = $countResult->fetch_assoc()['total'];
                                         </td>
                                         <td><i class='fas fa-phone-alt text-success'></i> {$maskedPhone}</td>
                                         <td><span class='badge badge-primary'>{$row['layanan']}</span></td>
-                                        <td><i class='fas fa-map-marker-alt text-info'></i> {$row['satker']}</td>
+                                        
                                       </tr>";
                             }
                         } else {
