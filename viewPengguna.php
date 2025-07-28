@@ -28,11 +28,6 @@ function formatPhoneNumber($phone)
 // Query to get all users
 $sql = "SELECT id, nama, nope, layanan, satker FROM pengguna";
 $result = $conn->query($sql);
-
-// Get total user count
-$countSql = "SELECT COUNT(*) as total FROM pengguna";
-$countResult = $conn->query($countSql);
-$totalUsers = $countResult->fetch_assoc()['total'];
 ?>
 
 <!DOCTYPE html>
@@ -49,80 +44,73 @@ $totalUsers = $countResult->fetch_assoc()['total'];
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 20px 0;
         }
 
         .main-container {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.98);
             border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(10px);
-            margin-top: 30px;
-            padding: 30px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(15px);
+            padding: 40px;
+            margin: 20px auto;
+            max-width: 1200px;
         }
 
         .header-section {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #f8f9fa;
         }
 
         .header-title {
             color: #2c3e50;
-            font-weight: 700;
-            font-size: 2.5rem;
-            margin-bottom: 10px;
+            font-weight: 800;
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
         }
 
-        .stats-card {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border-radius: 15px;
-            padding: 20px;
-            text-align: center;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
-        }
-
-        .stats-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 5px;
-        }
-
-        .stats-label {
-            font-size: 1.1rem;
-            opacity: 0.9;
+        .header-subtitle {
+            color: #6c757d;
+            font-size: 1.2rem;
+            font-weight: 400;
         }
 
         .search-container {
-            margin-bottom: 25px;
+            margin-bottom: 30px;
         }
 
         .search-input {
-            border-radius: 25px;
-            border: 2px solid #e9ecef;
-            padding: 12px 20px 12px 50px;
+            border-radius: 30px;
+            border: 3px solid #e9ecef;
+            padding: 15px 25px 15px 55px;
             font-size: 16px;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
         }
 
         .search-input:focus {
             border-color: #667eea;
-            box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.25);
+            transform: translateY(-2px);
         }
 
         .search-icon {
             position: absolute;
-            left: 20px;
+            left: 25px;
             top: 50%;
             transform: translateY(-50%);
-            color: #6c757d;
+            color: #667eea;
+            font-size: 18px;
         }
 
         .custom-table {
             background: white;
-            border-radius: 15px;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
         }
 
         .custom-table thead {
@@ -131,74 +119,113 @@ $totalUsers = $countResult->fetch_assoc()['total'];
 
         .custom-table thead th {
             color: white;
-            font-weight: 600;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
             border: none;
-            padding: 20px 15px;
+            padding: 25px 20px;
+            font-size: 14px;
         }
 
         .custom-table tbody tr {
             transition: all 0.3s ease;
+            border-bottom: 1px solid #f1f3f4;
         }
 
         .custom-table tbody tr:hover {
-            background-color: #f8f9ff;
-            transform: scale(1.01);
+            background: linear-gradient(135deg, #f8f9ff 0%, #f0f2ff 100%);
+            transform: translateX(5px);
+            box-shadow: 5px 0 15px rgba(102, 126, 234, 0.1);
         }
 
         .custom-table tbody td {
-            padding: 15px;
-            border-color: #e9ecef;
+            padding: 20px;
             vertical-align: middle;
+            border: none;
         }
 
         .user-avatar {
-            width: 40px;
-            height: 40px;
+            width: 45px;
+            height: 45px;
             border-radius: 50%;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             display: inline-flex;
             align-items: center;
             justify-content: center;
             color: white;
+            font-weight: 700;
+            margin-right: 15px;
+            font-size: 18px;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+        }
+
+        .user-name {
             font-weight: 600;
-            margin-right: 10px;
+            color: #2c3e50;
+            font-size: 16px;
+        }
+
+        .phone-number {
+            color: #28a745;
+            font-weight: 500;
+        }
+
+        .service-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
         }
 
         .no-data {
             text-align: center;
-            padding: 50px;
+            padding: 60px 20px;
             color: #6c757d;
         }
 
         .no-data i {
-            font-size: 4rem;
-            margin-bottom: 20px;
-            opacity: 0.5;
+            font-size: 5rem;
+            margin-bottom: 25px;
+            opacity: 0.4;
+            color: #667eea;
+        }
+
+        .no-data h5 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .main-container {
+                margin: 10px;
+                padding: 20px;
+            }
+
+            .header-title {
+                font-size: 2.2rem;
+            }
+
+            .custom-table {
+                font-size: 14px;
+            }
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
+    <div class="container-fluid">
         <div class="main-container">
             <div class="header-section">
                 <h1 class="header-title">
-                    <i class="fas fa-users"></i> Dashboard Pengguna
+                    <i class="fas fa-users"></i> Daftar Pengguna
                 </h1>
-                <p class="text-muted">Kelola dan pantau data pengguna sistem</p>
-            </div>
-
-            <div class="row">
-                <div class="col-md-4 mx-auto">
-                    <div class="stats-card">
-                        <div class="stats-number"><?php echo $totalUsers; ?></div>
-                        <div class="stats-label">
-                            <i class="fas fa-user-friends"></i> Total Pengguna
-                        </div>
-                    </div>
-                </div>
+                <p class="header-subtitle">Kelola dan pantau data pengguna sistem</p>
             </div>
 
             <div class="search-container">
@@ -216,7 +243,7 @@ $totalUsers = $countResult->fetch_assoc()['total'];
                             <th><i class="fas fa-user"></i> Nama</th>
                             <th><i class="fas fa-phone"></i> No. HP</th>
                             <th><i class="fas fa-cog"></i> Layanan</th>
-                           
+                            <th><i class="fas fa-building"></i> Satker</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -227,21 +254,21 @@ $totalUsers = $countResult->fetch_assoc()['total'];
                                 $initial = strtoupper(substr($row['nama'], 0, 1));
                                 $maskedPhone = formatPhoneNumber($row['nope']);
                                 echo "<tr>
-                                        <td><strong>{$row['id']}</strong></td>
+                                        <td><strong class='text-primary'>{$row['id']}</strong></td>
                                         <td>
                                             <div class='d-flex align-items-center'>
                                                 <div class='user-avatar'>{$initial}</div>
-                                                <span>{$row['nama']}</span>
+                                                <span class='user-name'>{$row['nama']}</span>
                                             </div>
                                         </td>
-                                        <td><i class='fas fa-phone-alt text-success'></i> {$maskedPhone}</td>
-                                        <td><span class='badge badge-primary'>{$row['layanan']}</span></td>
-                                        
+                                        <td><i class='fas fa-phone-alt phone-number'></i> <span class='phone-number'>{$maskedPhone}</span></td>
+                                        <td><span class='service-badge'>{$row['layanan']}</span></td>
+                                        <td><i class='fas fa-building text-info'></i> {$row['satker']}</td>
                                       </tr>";
                             }
                         } else {
                             echo "<tr><td colspan='5' class='no-data'>
-                                    <i class='fas fa-inbox'></i>
+                                    <i class='fas fa-users-slash'></i>
                                     <h5>Tidak ada data pengguna</h5>
                                     <p>Belum ada pengguna yang terdaftar dalam sistem</p>
                                   </td></tr>";
